@@ -1,6 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-footer',
+  templateUrl: './footer.component.html',
+  styleUrls: ['./footer.component.css']
+})
+export class FooterComponent {
+  columna1 = 'Información de la columna 1';
+  columna2 = 'Información de la columna 2';
+  columna3 = 'Información de la columna 3';
+}
 
 describe('AppComponent', () => {
   beforeEach(async () => {
