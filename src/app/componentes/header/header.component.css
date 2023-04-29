@@ -1,0 +1,17 @@
+.boton-carrusel{
+    background-color: #f6372d;
+    border-radius: 100%;
+    padding: 0.5rem;
+    height: 60px;
+    width: 60px;
+}
+
+@media screen and (max-width: 768px){
+
+    .alto-carrusel-mobile{
+        height: 180px;
+    }
+    .alto-carrusel-mobile img{
+        min-height: 100px;
+    }
+}
