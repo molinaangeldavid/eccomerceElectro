@@ -1,0 +1,13 @@
+.navbar{
+    background-color: #e09f3e;
+}
+.nav-content-responsive{
+    display: flex;
+    flex-direction: row;
+}
+@media screen and (max-width:990px){
+    .nav-content-responsive{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+}

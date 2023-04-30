@@ -5,12 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ButtonModule } from 'primeng/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NavComponent } from './styles/nav/nav.component';
+import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,
