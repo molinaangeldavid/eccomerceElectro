@@ -1,0 +1,14 @@
+.producto{
+    background-color: white;
+    max-width: 280px;
+    border-radius: 7px;
+    box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+.producto:hover{
+    box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
+    transform: translateY(-3%);
+}
+
