@@ -8,14 +8,27 @@ import { FormsModule } from '@angular/forms';
 })
 export class RegistroComponent {
 
-  usuario: any = {
+  registerAccount: any = {
     username: undefined,
     password: undefined,
     email: undefined,
     fechaNacimiento: undefined,
-    localidad: undefined
   }
 
-  acac: any
+  existAccount(): boolean{
+    for(let i = 0; i < localStorage.length ; i++){
+      if(localStorage.key(i) == this.registerAccount.username){
+        return true;
+      }
+    }
+    return false;
+  }
+
+  signUp(){
+    if(!this.existAccount()){
+      localStorage.setItem(this.registerAccount.username,JSON.stringify(this.registerAccount))
+    }
+  }
+
 
 }

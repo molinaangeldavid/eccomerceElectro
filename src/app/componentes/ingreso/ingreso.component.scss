@@ -12,8 +12,7 @@
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 10px 30px 30px 30px;
   width: 600px;
-border-radius: 
-5px;
+  border-radius: 5px;
 }
 
 .login-form-header {
@@ -38,7 +37,7 @@ border-radius:
 }
 
 .input-item {
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .input-item input {
@@ -47,6 +46,13 @@ border-radius:
   border-radius: 5px;
   border: 1px solid #787878;
 }
+
+.error-validator-log-in{
+  color: rgb(206, 15, 15);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 
 button {
   margin-top: 5px;
