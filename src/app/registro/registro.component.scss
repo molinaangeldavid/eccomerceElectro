@@ -1,0 +1,74 @@
+.login-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.login-form-box {
+  background-color: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 10px 30px 30px 30px;
+  width: 600px;
+  border-radius: 5px;
+}
+
+.login-form-header {
+  margin-bottom: 40px;
+}
+
+.login-form-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button-inicio a{
+  text-decoration: none;
+  color: rgba(20, 18, 18, 0.852);
+}
+
+.login-form-header p {
+  font-size: 18px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 0;
+}
+
+.login-form-header p a {
+  text-decoration: none;
+  color: #0e74bd;
+}
+
+.input-item {
+  margin-bottom: 20px;
+}
+
+.input-item input {
+  width: calc(100% - 30px);
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid #787878;
+}
+
+.error-validation-sign-up{
+  color: rgb(206, 15, 15);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.alert div {
+  background-color: #fed3d3;
+  color: #820000;
+  padding: .5rem;
+}
+
+.button-submit {
+  margin-top: 5px;
+  background-color: #0e74bd;
+  border: none;
+  color: #fff;
+  padding: 12px 40px;
+  font-size: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}

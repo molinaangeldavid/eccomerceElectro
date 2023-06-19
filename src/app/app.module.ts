@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,12 @@ import { NavBarComponent } from './componentes/nav-bar/nav-bar.component';
 import { ProductoComponent } from './componentes/producto/producto.component'
 import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
+import { IngresoComponent } from './componentes/ingreso/ingreso.component';
+import { HomeComponent } from './componentes/home/home.component';
+import { Error404Component } from './componentes/error404/error404.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RegistroComponent } from './registro/registro.component';
+
 
 
 
@@ -19,14 +26,19 @@ import { FooterComponent } from './componentes/footer/footer.component';
     NavBarComponent,
     ProductoComponent,
     HeaderComponent,
-    FooterComponent
-
+    FooterComponent,
+    IngresoComponent,
+    HomeComponent,
+    Error404Component,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ButtonModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
