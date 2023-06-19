@@ -15,6 +15,7 @@ import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { Error404Component } from './componentes/error404/error404.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RegistroComponent } from './registro/registro.component';
 
 
 
@@ -28,7 +29,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     FooterComponent,
     IngresoComponent,
     HomeComponent,
-    Error404Component
+    Error404Component,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

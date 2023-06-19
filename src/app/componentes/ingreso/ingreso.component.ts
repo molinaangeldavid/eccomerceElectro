@@ -25,16 +25,22 @@ export class IngresoComponent {
   userPassword: boolean = false;
 
   logIn(){
-    for(let i=0; i<localStorage.length; i++) {
-      if(this.userAccount.user == localStorage.key(i)){
-        if(localStorage.getItem(this.userAccount.user) == this.userAccount.password){
-          this.userData.setUser(this.userAccount.user)
-          this.router.navigate(['/home'])
+    if(localStorage.length == 0){
+      this.userUser = true;
+    }else{
+      for(let i=0; i<localStorage.length; i++) {
+        if(this.userAccount.user == localStorage.key(i)){
+          let data = JSON.parse(localStorage.getItem(this.userAccount.user)!)
+          if(data.password == this.userAccount.password){
+            this.userData.setUser(this.userAccount.user)
+            this.router.navigate(['/home'])
+          }else{
+            this.userPassword = true
+          }
         }else{
-          this.userPassword = true
+          this.userUser = true;
         }
-      }else{
-        this.userUser = true;
+        
       }
     }
   }
