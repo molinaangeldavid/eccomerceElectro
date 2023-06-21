@@ -15,10 +15,8 @@ import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { HomeComponent } from './componentes/home/home.component';
 import { Error404Component } from './componentes/error404/error404.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RegistroComponent } from './registro/registro.component';
-
-
-
+import { RegistroComponent } from './componentes/registro/registro.component';
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -38,7 +36,8 @@ import { RegistroComponent } from './registro/registro.component';
     ButtonModule,
     NgbModule,
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbCollapseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  isMenuCollapsed = true;
+  isMenuCollapsed2 = true;
+
 }
