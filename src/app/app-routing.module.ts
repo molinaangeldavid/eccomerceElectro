@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { HomeComponent } from './componentes/home/home.component';
-import { RegistroComponent } from './registro/registro.component';
+import { RegistroComponent } from './componentes/registro/registro.component';
 import { Error404Component } from './componentes/error404/error404.component';
 
 const routes: Routes = [
