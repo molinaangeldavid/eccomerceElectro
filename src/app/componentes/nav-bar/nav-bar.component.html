@@ -1,63 +1,101 @@
 
 <nav class="navbar navbar-expand-lg bg-danger">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">ElectroShop</a>
-    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
-    <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
-      <div class="nav-content-responsive m-auto mt-2 mb-2">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn text-white border-0" type="submit"><i class="fa-solid fa-magnifying-glass fs-4"></i></button>
-        </form>
-      </div>
-      <ul class="navbar-nav mb-lg-0 justify-content-end">
-        <li class="nav-item">
-          <button class="btn">
-            <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
-          </button>
-        </li>
-        <li class="nav-item">
-          <button class="btn">
-            <a class="nav-link active text-white" aria-current="page" href="#">Ingresar</a>
-          </button>
-        </li>
-        <li class="nav-item">
-          <button class="btn">
-            <a class="nav-link active text-white" aria-current="page" href="#">Nosotros</a>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
+	<div class="container-fluid">
+		<a class="navbar-brand text-white" routerLink="../home">ElectroShop</a>
+		<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+		<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+			<div class="nav-content-responsive m-auto mt-2 mb-2">
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn text-white border-0" type="submit"><i class="fa-solid fa-magnifying-glass fs-4"></i></button>
+				</form>
+			</div>
+			<ul class="navbar-nav mb-lg-0 justify-content-end">
+				<li class="nav-item">
+					<button class="btn">
+						<a class="nav-link active text-white" aria-current="page" routerLink="../home">Inicio</a>
+					</button>
+				</li>
+				<li class="nav-item">
+					<button class="btn">
+						<a class="nav-link active text-white" aria-current="page" routerLink="../ingreso">Ingresar</a>
+					</button>
+				</li>
+				<li class="nav-item">
+					<button class="btn">
+						<a class="nav-link active text-white" aria-current="page" routerLink="../nosotros">Nosotros</a>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="home">Productos</a>
-    <button class="navbar-toggler" type="button" (click)="isMenuCollapsed2 = !isMenuCollapsed2">&#9776;</button>
-    <div [ngbCollapse]="isMenuCollapsed2" class="collapse navbar-collapse">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="home">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" routerLink="home" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" routerLink="home">Action</a></li>
-            <li><a class="dropdown-item" routerLink="home">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" routerLink="home">Something else here</a></li>
-          </ul>
-        </li>
-      </ul>
-      <!-- <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-    </div>
-  </div>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+	<div class="container-fluid">
+		<span class="navbar-brand">Categorias</span>
+		<button
+		class="navbar-toggler"
+		type="button"
+		aria-controls="navbarContent"
+		[attr.aria-expanded]="!collapsed"
+		aria-label="Toggle navigation"
+		(click)="collapsed = !collapsed"
+		>
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+		<ul class="navbar-nav ms-auto">
+			<li class="nav-item" ngbDropdown>
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button"> Hogar </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Aspiradoras</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Neveras</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Hornos</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Termotanques</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Calefactores</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Aire acondicionado</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Microondas</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Ventiladores</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Planchas</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Licuadoras</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Pavas electricas & cafeteras</a>
+					
+				</div>
+			</li>
+			
+			<li class="nav-item" ngbDropdown>
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button"> Tecnologia </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-end">
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Televisores</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">SmartPhones</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Equipos de musica</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Parlantes</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Computadoras</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Consolas de videojuego</a>
+				</div>
+			</li>
+			
+			<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Belleza y cuidado </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Secadoras</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Depiladoras & afeitadoras</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()"></a>
+				</div>
+			</li>
+			
+			<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown4" role="button"> Taller & Jardin </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown4" class="dropdown-menu">
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Cortacesped</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Podadora</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Motosierra</a>
+					<a ngbDropdownItem href="#" (click)="$event.preventDefault()">Sopladora</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 </nav>

@@ -17,6 +17,9 @@ import { Error404Component } from './componentes/error404/error404.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
+import { ProductsListGridComponent } from './componentes/products-list-grid/products-list-grid.component';
+import { ProfileProductComponent } from './componentes/profile-product/profile-product.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
     IngresoComponent,
     HomeComponent,
     Error404Component,
-    RegistroComponent
+    RegistroComponent,
+    NosotrosComponent,
+    ProductsListGridComponent,
+    ProfileProductComponent
   ],
   imports: [
     BrowserModule,
