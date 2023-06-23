@@ -20,6 +20,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { ProductsListGridComponent } from './componentes/products-list-grid/products-list-grid.component';
 import { ProfileProductComponent } from './componentes/profile-product/profile-product.component';
+import { AsideFilterComponent } from './componentes/aside-filter/aside-filter.component';
+import { ContainerProductsComponent } from './componentes/container-products/container-products.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { ProfileProductComponent } from './componentes/profile-product/profile-p
     RegistroComponent,
     NosotrosComponent,
     ProductsListGridComponent,
-    ProfileProductComponent
+    ProfileProductComponent,
+    AsideFilterComponent,
+    ContainerProductsComponent
   ],
   imports: [
     BrowserModule,
