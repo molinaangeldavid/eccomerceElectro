@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import { ProductCardService } from 'src/app/servicios/product-card.service';
 
 @Component({
@@ -8,14 +8,13 @@ import { ProductCardService } from 'src/app/servicios/product-card.service';
 })
 export class ProductoComponent {
 
+  @Input() product: any;
+  
   constructor(private productService: ProductCardService){
-
+    this.product = this.productService.getProduct()
   }
 
-  product: any;
-
   ngOnInit(){
-    this.product = this.productService.getProduct()
   }
 
 

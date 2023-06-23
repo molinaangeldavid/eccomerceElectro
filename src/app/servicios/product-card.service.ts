@@ -13,11 +13,11 @@ export class ProductCardService {
   product: any = hogar[0];
 
   getProduct(){
-
+    return this.product;
   }
 
-  setproduct(){
-
+  setproduct(newProd: any){
+    this.product = newProd;
   }
 
 
