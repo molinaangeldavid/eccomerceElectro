@@ -1,110 +1,14 @@
-
 <app-nav-bar></app-nav-bar>
 
 <app-header></app-header>
 
 <div class="flex row">
-  <div class="col-lg-3 col-md-3">
-    <div>
-      <div class="card">
-        <article class="card-group-item">
-          <header class="card-header">
-            <span class="title">Rango de precio </span>
-          </header>
-          <div class="filter-content">
-            <div class="card-body">
-              <div class="mb-2">
-                <div>
-                  <span><a class="text-decoration-none text-black mb-2 fw-light" routerLink="#">Menor a $10.000</a></span>
-                </div>
-                <div>
-                  <span><a class="text-decoration-none text-black mb-2 fw-light" routerLink="#">Entre $10.000 a $30.000</a></span>
-                </div>
-                <div>
-                  <span><a class="text-decoration-none text-black mb-2 fw-light" routerLink="#">Mayor a $30.000</a></span>
-                </div>
-              </div>
-              <div class="row">
-                <div class="form-group col-5">
-                  <label>Min</label>
-                  <input type="number" class="form-control" id="inputEmail4" placeholder="$0">
-                </div>
-                <div class="form-group col-5 text-right">
-                  <label>Max</label>
-                  <input type="number" class="form-control" placeholder="$1,0000">
-                </div>
-              </div>
-            </div> <!-- card-body.// -->
-          </div>
-        </article> <!-- card-group-item.// -->
-        <article class="card-group-item">
-          <header class="card-header">
-            <span class="title">Marca </span>
-          </header>
-          <div class="filter-content">
-            <div class="card-body">
-              <form>
-                <label class="form-check">
-                  <input class="form-check-input" type="checkbox" value="">
-                  <span class="form-check-label">
-                    Mersedes Benz
-                  </span>
-                </label> <!-- form-check.// -->
-                <label class="form-check">
-                  <input class="form-check-input" type="checkbox" value="">
-                  <span class="form-check-label">
-                    Nissan Altima
-                  </span>
-                </label>  <!-- form-check.// -->
-                <label class="form-check">
-                  <input class="form-check-input" type="checkbox" value="">
-                  <span class="form-check-label">
-                    Another Brand
-                  </span>
-                </label>  <!-- form-check.// -->
-              </form>
-              
-            </div> <!-- card-body.// -->
-          </div>
-        </article> <!-- card-group-item.// -->
-      </div>
-    </div>
-  </div>
-  <div class="col-lg-8 col-md-9">
-    <div class="container mt-5">
-      <h3>Lo mas visto</h3>
-    </div>
+  <app-aside-filter class="col-lg-3 col-md-3">
+
+  </app-aside-filter>
+  <app-container-products class="col-lg-8 col-md-9">
     
-    <div class="container text-center my-5 ancho-productos">
-      <div class="row justify-content-center">
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-6 mb-3">
-          <app-producto></app-producto>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+  </app-container-products>
 </div>
 
 
