@@ -5,5 +5,17 @@ import { Injectable } from '@angular/core';
 })
 export class ProductsService {
 
-  constructor() { }
+  products!: any[];
+
+  getProducts(){
+    return this.products;
+  }
+
+  setProducts(newProds: any[]){
+    this.products = newProds;
+  }
+
+
+
+
 }
