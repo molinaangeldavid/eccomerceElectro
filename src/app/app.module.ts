@@ -23,6 +23,10 @@ import { ProfileProductComponent } from './componentes/profile-product/profile-p
 import { AsideFilterComponent } from './componentes/aside-filter/aside-filter.component';
 import { ContainerProductsComponent } from './componentes/container-products/container-products.component';
 
+import { PaginatorModule } from 'primeng/paginator';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +51,8 @@ import { ContainerProductsComponent } from './componentes/container-products/con
     NgbModule,
     FormsModule,
     FontAwesomeModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    PaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
