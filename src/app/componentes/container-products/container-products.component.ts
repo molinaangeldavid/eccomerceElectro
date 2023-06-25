@@ -1,4 +1,5 @@
-import { Component,EventEmitter,Input,Output } from '@angular/core';
+import { Component,Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { ProductsService } from 'src/app/servicios/products.service';
 
 interface PageEvent {
   first: number;
@@ -12,7 +13,11 @@ interface PageEvent {
   templateUrl: './container-products.component.html',
   styleUrls: ['./container-products.component.scss']
 })
-export class ContainerProductsComponent {
+export class ContainerProductsComponent implements OnInit, OnChanges{
+
+  constructor(private productsService: ProductsService){
+
+  }
 
   currentProductsShow: any = []
 
@@ -22,9 +27,12 @@ export class ContainerProductsComponent {
     this.currentProductsShow = this.products.slice(0,6);
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.currentProductsShow = this.productsService.getProducts()
+  }  
+
   first: number = 0;
 
-  @Output() marcas: EventEmitter<string> = new EventEmitter<string>();
 
   onPageChange(event: PageEvent){
     if(event.page == 0){

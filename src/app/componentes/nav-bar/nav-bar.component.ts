@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,EventEmitter,Output } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,8 +7,14 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  @Output() productBy: EventEmitter<string> = new EventEmitter<string>();
+
   isMenuCollapsed = true;
 
   collapsed = true;
+
+  sendTypeOfProduct(value: string){
+    this.productBy.emit(value)
+  }
 
 }

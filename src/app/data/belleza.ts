@@ -1,7 +1,7 @@
 export const belleza = [
     {
         codigo: 10601,
-        categoria: "belleza",
+        categoria: "secadores",
         nombre: "Secador de pelo Atma SP8964N negro 125V/220V - 240V",
         descripcion: "",
         descripcionCorta: "Secador de pelo Atma color negro",
@@ -12,7 +12,7 @@ export const belleza = [
     },
     {
         codigo: 10602,
-        categoria: "belleza",
+        categoria: "secadores",
         nombre: "Secador de pelo GA.MA Italy Mistral Ceramic",
         descripcion: "",
         descripcionCorta: "Secador de pelo GAMA con 1.7mts de cable",
@@ -23,7 +23,7 @@ export const belleza = [
     },
     {
         codigo: 10603,
-        categoria: "belleza",
+        categoria: "secadores",
         nombre: "Secador De Pelo Atma Sp8970p De 1800w 3 Velocidades",
         descripcion: "",
         descripcionCorta: "Secador de pelo Atma con 3 velocidades. accesorios de peine y mas.",
@@ -34,11 +34,11 @@ export const belleza = [
     },
     {
         codigo: 10702,
-        categoria: "belleza",
+        categoria: "depiladoras",
         nombre: "depiladora Inalambrica De Pinzas Gama Velvet",
         descripcion: "",
         descripcionCorta: "Depiladora Inalambrica Gama para ellas. Para tener una piel suave y sedosa por todo tu cuerpo",
-        imagen: "../assets/depiladora-Inalambrica-De-Pinzas-Gama-Velvet.webp",
+        imagen: "../assets/depiladora-velvet.webp",
         marca: "Gama",
         color:"rosa",
         precio: 11.489,
@@ -47,7 +47,7 @@ export const belleza = [
     },
     {
         codigo: 10703,
-        categoria: "belleza",
+        categoria: "depiladoras",
         nombre: "Depiladora Care By Gadnic Lady600 9w",
         descripcion: "",
         descripcionCorta: "Depiladora Inalambrica Gadnic. Con dos cabezales. Es lavable y recargable",
@@ -59,7 +59,7 @@ export const belleza = [
     },
     {
         codigo: 10810,
-        categoria: "belleza",
+        categoria: "depiladoras",
         nombre: "Afeitadora GA.MA Italy GSH 855 Master negra ",
         descripcion: "",
         descripcionCorta: "Afeitadora para ellos y ellas. Marca Gama Master. Funciona re piola",
