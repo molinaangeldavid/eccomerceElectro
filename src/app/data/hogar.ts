@@ -164,7 +164,7 @@ export const hogar= [
         nombre: "Potente horno eléctrico BGH",
         descripcion: "",
         descripcionCorta: "Horno electrico con capacidad de 25 L para la comodidad y espacio de tu cocina",
-        imagen: "../assets/horno-electrico-GBH.webp",
+        imagen: "../assets/horno-electrico-BGH-negro.webp",
         altura: 280,
         eficiencia: "A",
         peso: 4.9,
