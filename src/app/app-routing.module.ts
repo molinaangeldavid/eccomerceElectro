@@ -5,6 +5,8 @@ import { HomeComponent } from './componentes/home/home.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { Error404Component } from './componentes/error404/error404.component';
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
+import { ProfileProductComponent } from './componentes/profile-product/profile-product.component';
+import { ProductsListGridComponent } from './componentes/products-list-grid/products-list-grid.component';
 
 const routes: Routes = [
   {
@@ -13,12 +15,31 @@ const routes: Routes = [
   },
   {
     path: "home",
-    component: HomeComponent
+    component: HomeComponent,  
+    children: [
+      {
+        path: '',
+        redirectTo: 'products',
+        pathMatch: 'full'
+      },
+      {
+        path: 'products',
+        component: ProductsListGridComponent
+      },
+      {
+        path: 'product/:id',
+        component: ProfileProductComponent
+      },
+      {
+        path: 'nosotros',
+        component: NosotrosComponent,
+      }
+    ]
   },
-  {
-    path: "nosotros",
-    component: NosotrosComponent
-  },
+  // {
+  //   path: "nosotros",
+  //   component: NosotrosComponent
+  // },
   {
     path: "registro",
     component: RegistroComponent
@@ -26,7 +47,6 @@ const routes: Routes = [
   {
     path: "",
     component: IngresoComponent,
-    
   },
   {
     path: "**",

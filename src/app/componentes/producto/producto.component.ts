@@ -1,4 +1,5 @@
 import { Component,Input } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCardService } from 'src/app/servicios/product-card.service';
 
 @Component({
@@ -10,12 +11,17 @@ export class ProductoComponent {
 
   @Input() product: any;
   
-  constructor(private productService: ProductCardService){
+  constructor(private productService: ProductCardService, private router: Router, private route: ActivatedRoute){
     this.product = this.productService.getProduct()
   }
 
   ngOnInit(){
   }
 
+  goTo(){
+    this.productService.setproduct(this.product)
+    this.router.navigate(['../product', this.product.codigo],{relativeTo: this.route})
+    
+  }
 
 }

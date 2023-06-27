@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-profile-product',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./profile-product.component.scss']
 })
 export class ProfileProductComponent {
+
+  id: any;
+
+  constructor(private route: ActivatedRoute){
+
+    this.id = this.route.snapshot.paramMap.get('id');
+
+  }
 
 }

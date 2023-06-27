@@ -24,25 +24,21 @@ export class ContainerProductsComponent implements OnInit, OnChanges{
   @Input() products!: any[];
 
   ngOnInit(){
-    this.currentProductsShow = this.products.slice(0,6);
+    this.currentProductsShow = this.products.slice(0,3);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     this.currentProductsShow = this.productsService.getProducts()
   }  
-
   first: number = 0;
-
 
   onPageChange(event: PageEvent){
     if(event.page == 0){
-      this.currentProductsShow = this.products.slice(0,6);
+      this.currentProductsShow = this.products.slice(0,3);
     }else{
       this.currentProductsShow = this.products.slice(event.page*event.rows,(event.page + 1)*event.rows)
     }
     this.first = event.first;
-    console.log("first: " + event.first)
-    console.log("page:" +  event.page)
   }
 
 
