@@ -1,10 +1,10 @@
-<div class="card producto mx-auto" style="width: 14rem;">
+<div class="card producto mx-auto" (click)="goTo()" style="width: 14rem;">
     <img src={{product.imagen}} class="card-img-top" alt="...">
     <div class="card-body">
         <div class="description-text">
             <p class="card-text">{{product.descripcionCorta}}</p>
         </div>
-        <h4 class="text-danger">$ {{product.precio}}</h4>
+        <h4 class="text-danger"> $ {{product.precio}}</h4>
         <button class="btn btn-danger">VER PRODUCTO</button>
     </div>
 </div>
