@@ -1,4 +1,5 @@
-import { Component,EventEmitter,Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { ProductsService } from 'src/app/servicios/products.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,14 +8,14 @@ import { Component,EventEmitter,Output } from '@angular/core';
 })
 export class NavBarComponent {
 
-  @Output() productBy: EventEmitter<string> = new EventEmitter<string>();
+  constructor(private productsService: ProductsService){}
 
   isMenuCollapsed = true;
 
   collapsed = true;
 
   sendTypeOfProduct(value: string){
-    this.productBy.emit(value)
+    this.productsService.setFilterproducts(value)
   }
 
 }

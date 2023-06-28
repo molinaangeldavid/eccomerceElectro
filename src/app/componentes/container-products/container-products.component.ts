@@ -1,4 +1,4 @@
-import { Component,Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import { ProductsService } from 'src/app/servicios/products.service';
 
 interface PageEvent {
@@ -13,23 +13,28 @@ interface PageEvent {
   templateUrl: './container-products.component.html',
   styleUrls: ['./container-products.component.scss']
 })
-export class ContainerProductsComponent implements OnInit, OnChanges{
+export class ContainerProductsComponent implements OnInit,OnChanges{
+  
+  products!: any[]
 
   constructor(private productsService: ProductsService){
-
+    this.productsService.productsInit()
+    this.products = this.productsService.getProducts();
   }
-
+  
   currentProductsShow: any = []
 
-  @Input() products!: any[];
 
   ngOnInit(){
     this.currentProductsShow = this.products.slice(0,3);
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.currentProductsShow = this.productsService.getProducts()
-  }  
+    if('products' in changes){
+      console.log("hola")
+    }
+  }
+
   first: number = 0;
 
   onPageChange(event: PageEvent){
