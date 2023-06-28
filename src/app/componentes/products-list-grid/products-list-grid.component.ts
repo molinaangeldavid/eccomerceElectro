@@ -14,9 +14,6 @@ export class ProductsListGridComponent implements OnInit, OnChanges{
 
   constructor(){}
 
-  products!: any[];
-
-
   ngOnInit(){
   }
 

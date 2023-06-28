@@ -13,38 +13,44 @@ interface PageEvent {
   templateUrl: './container-products.component.html',
   styleUrls: ['./container-products.component.scss']
 })
+
 export class ContainerProductsComponent implements OnInit,OnChanges{
   
-  products!: any[]
+  // products!: any[]
 
-  constructor(private productsService: ProductsService){
-    this.productsService.productsInit()
-    this.products = this.productsService.getProducts();
+  constructor(public productsService: ProductsService){
+    this.productsService.getProducts().slice(0,3)
   }
   
-  currentProductsShow: any = []
-
+  currentProductsShow!: any[];
 
   ngOnInit(){
-    this.currentProductsShow = this.products.slice(0,3);
-  }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    if('products' in changes){
-      console.log("hola")
-    }
   }
 
   first: number = 0;
 
+  ngOnChanges(changes: SimpleChanges): void {
+    // this.productsService.setProducts(this.currentProductsShow)
+    // console.log("f")
+  }
+
+  getProducts(){
+    // this.productsService.getProducts().subscribe(
+    //   x=> this.products = x
+    // )
+    // this.productsService.getProducts()
+  }
+
   onPageChange(event: PageEvent){
     if(event.page == 0){
-      this.currentProductsShow = this.products.slice(0,3);
+      this.productsService.getProducts().slice(0,3);
     }else{
-      this.currentProductsShow = this.products.slice(event.page*event.rows,(event.page + 1)*event.rows)
+      this.productsService.getProducts().slice(event.page*event.rows,(event.page + 1)*event.rows)
     }
     this.first = event.first;
   }
+
+
 
 
 
