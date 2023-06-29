@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductsService } from 'src/app/servicios/products.service';
 import { hogar } from 'src/app/data/hogar';
 import { Router } from '@angular/router';
+import { UserDataService } from 'src/app/servicios/user-data.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,8 +10,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent {
+  
+  mostrar!: boolean;
+  user!: string;
 
-  constructor(private productsService: ProductsService, private router: Router){}
+  valueSvg: string = '<img src="../../../assets/person-circle.svg" alt="profile">'
+  value!: string;
+
+  shop!: number
+  
+  constructor(
+    private productsService: ProductsService, 
+    private router: Router,
+    private userService: UserDataService){
+      if(userService.getUser() != undefined){
+        this.mostrar = true
+        this.user = this.userService.getUser()!;
+        this.value = this.valueSvg;
+        this.shop = 0
+    }
+  }
+
+  onMouseOver(){
+    this.value = this.user
+  }
+
+  onMouseOut(){
+    this.value = this.valueSvg;
+  }
 
   isMenuCollapsed = true;
 
@@ -26,5 +53,8 @@ export class NavBarComponent {
     this.router.navigate(['/home'])
     this.productsService.setProducts(hogar)
   }
+
+
+
 
 }
