@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductCardService } from 'src/app/servicios/product-card.service';
 import { Location } from '@angular/common';
+import { UserDataService } from 'src/app/servicios/user-data.service';
+import { CarritoService } from 'src/app/servicios/carrito.service';
 
 @Component({
   selector: 'app-profile-product',
@@ -12,7 +14,13 @@ export class ProfileProductComponent {
 
   id: any;
 
-  constructor(private route: ActivatedRoute, private productCardService: ProductCardService, private _location: Location){
+  constructor(
+    private route: ActivatedRoute, 
+    private productCardService: ProductCardService, 
+    private _location: Location,
+    private router:Router,
+    private userDataService: UserDataService,
+    private carritoService: CarritoService){
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -100,6 +108,16 @@ export class ProfileProductComponent {
 
   backTo(){
     this._location.back()
+  }
+
+  goTo(){
+    if(this.userDataService.getUser() != undefined){
+      this.carritoService.addNewProduct(this.product)
+      this.router.navigate(['/home/carrito'])
+      console.log("hola")
+    }else{
+      this.router.navigate(['/ingreso'])
+    }
   }
 
 
