@@ -42,10 +42,6 @@ const routes: Routes = [
      
     ]
   },
-  // {
-  //   path: "nosotros",
-  //   component: NosotrosComponent
-  // },
   {
     path: "registro",
     component: RegistroComponent

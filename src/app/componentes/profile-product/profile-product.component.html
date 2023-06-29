@@ -12,20 +12,18 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">{{product.nombre}}</h5>
+              <h5 class="card-title fs-2 fw-bolder">{{product.nombre}}</h5>
               <p class="card-text">{{product.descripcion}}</p>
-              <p class="card-text"><small class="text-body-secondary fw-bold" [innerHTML]="subdescripcion"></small></p>
+              <p class="card-text"><small class="text-body-secondary fw-bold " [innerHTML]="subdescripcion"></small></p>
             </div>
-          </div>
-          <div>
-            <span>
-              {{product.precio}}
-            </span>
+            <div class="badge bg-primary text-wrap m-auto fs-6" style="width: 10rem;">
+              ${{product.precio}}
+            </div>
           </div>
         </div>
         <div class="m-auto ">
 
-          <button class="btn btn-primary" id="button-comprar">Comprar</button>
+          <button class="btn btn-primary" id="button-comprar" (click)="goTo()">Comprar</button>
         </div>
       </div>
 </div>
