@@ -793,7 +793,6 @@ export const hogar= [
         capacidad: 480,
         ram: 16,
         grafico: "Radeon RX Vega",
-        accesorios: true
     },
     {
         codigo: 10401,
@@ -807,7 +806,6 @@ export const hogar= [
         capacidad: 240,
         ram: 8,
         grafico: "Intel graphics",
-        accesorios: true
     },
     {
         codigo: 10500,
