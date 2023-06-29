@@ -7,6 +7,7 @@ import { Error404Component } from './componentes/error404/error404.component';
 import { NosotrosComponent } from './componentes/nosotros/nosotros.component';
 import { ProfileProductComponent } from './componentes/profile-product/profile-product.component';
 import { ProductsListGridComponent } from './componentes/products-list-grid/products-list-grid.component';
+import { CarritoComponent } from './componentes/carrito/carrito.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,12 @@ const routes: Routes = [
       {
         path: 'nosotros',
         component: NosotrosComponent,
+      },
+      {
+        path: 'carrito',
+        component: CarritoComponent,
       }
+     
     ]
   },
   // {

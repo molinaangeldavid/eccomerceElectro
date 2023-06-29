@@ -24,8 +24,9 @@ import { AsideFilterComponent } from './componentes/aside-filter/aside-filter.co
 import { ContainerProductsComponent } from './componentes/container-products/container-products.component';
 
 import { PaginatorModule } from 'primeng/paginator';
-import { CardModule } from 'primeng/card'
-
+import { CardModule } from 'primeng/card';
+import { CarritoComponent } from './componentes/carrito/carrito.component'
+import { TableModule } from 'primeng/table';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { CardModule } from 'primeng/card'
     ProductsListGridComponent,
     ProfileProductComponent,
     AsideFilterComponent,
-    ContainerProductsComponent
+    ContainerProductsComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,8 @@ import { CardModule } from 'primeng/card'
     FontAwesomeModule,
     NgbCollapseModule,
     PaginatorModule,
-    CardModule
+    CardModule,
+    TableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

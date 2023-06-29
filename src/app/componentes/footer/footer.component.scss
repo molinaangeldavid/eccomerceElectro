@@ -10,3 +10,11 @@ footer {
   .style-hover:hover{
     color: royalblue;
   }
+
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
