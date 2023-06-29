@@ -16,9 +16,23 @@
 						<a class="nav-link active text-white" aria-current="page" (click)="go()">Inicio</a>
 					</button>
 				</li>
-				<li class="nav-item">
+				<li class="nav-item" *ngIf="!mostrar">
 					<button class="btn">
 						<a class="nav-link active text-white" aria-current="page" routerLink="../ingreso">Ingresar</a>
+					</button>
+				</li>
+				<li class="nav-item" *ngIf="mostrar">
+					<button class="btn user-icon">
+						<a class="nav-link active text-white" aria-current="page" (mouseover)="onMouseOver()" (mouseout)="onMouseOut()" [innerHTML]="value">
+						</a>
+					</button>
+				</li>
+				<li class="nav-item" *ngIf="mostrar">
+					<button class="btn user-icon">
+						<a class="nav-link active text-white" aria-current="page" routerLink="../carrito">
+							<img src="../../../assets/cart4.svg" alt="shop">
+							<span class="color-shopping">{{shop}}</span>
+						</a>
 					</button>
 				</li>
 				<li class="nav-item">

@@ -1,9 +1,9 @@
 .container-card{
-    width: 90%;
+    width: 70%;
     margin: 40px auto;
     border: 2px solid #1b1919;
     border-radius: 10px;
-    background-color: #FA7B55;
+    background-color: rgb(235, 230, 229);
     box-shadow: 2px 2px 3px rgb(40, 43, 43);
 }
 
@@ -12,4 +12,8 @@
 }
 .card{
     background-color: rgb(235, 230, 229);
+}
+
+#button-comprar{
+    font-size: 1.5rem;
 }

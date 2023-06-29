@@ -12,6 +12,17 @@
     transform: scale(1.2);
     overflow: hidden;
 }
+
+.color-shopping{
+    position: relative;
+    right: 3px;
+    top: 8px;
+    color: rgb(71, 71, 194);
+    font-weight: 900;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
 @media screen and (max-width:990px){
     .nav-content-responsive{
         flex-direction: column;
