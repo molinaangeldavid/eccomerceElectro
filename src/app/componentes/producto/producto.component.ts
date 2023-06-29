@@ -12,7 +12,6 @@ export class ProductoComponent {
   @Input() product: any;
   
   constructor(private productService: ProductCardService, private router: Router, private route: ActivatedRoute){
-    this.product = this.productService.getProduct()
   }
 
   ngOnInit(){

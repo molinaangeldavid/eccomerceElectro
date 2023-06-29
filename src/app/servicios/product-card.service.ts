@@ -10,7 +10,7 @@ export class ProductCardService {
 
   // product: any;
 
-  product: any = hogar[0];
+  product: any = hogar;
 
   getProduct(){
     return this.product;

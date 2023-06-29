@@ -16,19 +16,19 @@ interface PageEvent {
 
 export class ContainerProductsComponent implements OnInit,OnChanges{
   
-  // products!: any[]
+  products!: any[]
 
   constructor(public productsService: ProductsService){
     this.productsService.getProducts().slice(0,3)
   }
   
-  currentProductsShow!: any[];
-
+  // currentProductsShow!: any[];
+  
   ngOnInit(){
   }
-
+  
   first: number = 0;
-
+  
   ngOnChanges(changes: SimpleChanges): void {
     // this.productsService.setProducts(this.currentProductsShow)
     // console.log("f")
@@ -36,12 +36,12 @@ export class ContainerProductsComponent implements OnInit,OnChanges{
 
   getProducts(){
     // this.productsService.getProducts().subscribe(
-    //   x=> this.products = x
-    // )
-    // this.productsService.getProducts()
-  }
-
-  onPageChange(event: PageEvent){
+      //   x=> this.products = x
+      // )
+      // this.productsService.getProducts()
+    }
+    
+    onPageChange(event: PageEvent){
     if(event.page == 0){
       this.productsService.getProducts().slice(0,3);
     }else{

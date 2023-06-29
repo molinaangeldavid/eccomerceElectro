@@ -24,6 +24,7 @@ import { AsideFilterComponent } from './componentes/aside-filter/aside-filter.co
 import { ContainerProductsComponent } from './componentes/container-products/container-products.component';
 
 import { PaginatorModule } from 'primeng/paginator';
+import { CardModule } from 'primeng/card'
 
 
 
@@ -52,7 +53,8 @@ import { PaginatorModule } from 'primeng/paginator';
     FormsModule,
     FontAwesomeModule,
     NgbCollapseModule,
-    PaginatorModule
+    PaginatorModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
