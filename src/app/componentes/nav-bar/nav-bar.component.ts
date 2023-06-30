@@ -27,7 +27,7 @@ export class NavBarComponent {
         this.mostrar = true
         this.user = this.userService.getUser()!;
         this.value = this.valueSvg;
-        this.shop = 0
+        this.shop = 2
     }
   }
 
@@ -52,6 +52,11 @@ export class NavBarComponent {
   go(){
     this.router.navigate(['/home'])
     this.productsService.setProducts(hogar)
+  }
+
+  logOut(){
+    this.userService.setUser("")
+    this.mostrar = false;
   }
 
 
