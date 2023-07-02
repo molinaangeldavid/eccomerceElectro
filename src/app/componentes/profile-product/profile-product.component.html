@@ -5,7 +5,7 @@
             <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
           </svg>
     </button>
-    <div class="card mb-3 w-100 h-auto m-auto">
+    <div class="card mb-3 w-100 m-auto">
         <div class="row g-0">
           <div class="col-md-4">
             <img src={{product.imagen}} class="img-fluid rounded-start" alt="...">
@@ -17,13 +17,14 @@
               <p class="card-text"><small class="text-body-secondary fw-bold " [innerHTML]="subdescripcion"></small></p>
             </div>
             <div class="badge bg-primary text-wrap m-auto fs-6" style="width: 10rem;">
-              ${{product.precio}}
+              {{product.precio | currency}}
             </div>
           </div>
         </div>
-        <div class="m-auto ">
-
-          <button class="btn btn-primary" id="button-comprar" (click)="goTo()">Comprar</button>
+        <div class="m-auto">
+          <p-toast></p-toast>
+          <button type="button" pRipple pButton class="btn btn-primary" id="button-comprar" (click)="addCash()">Agregar al carrito</button>
         </div>
+
       </div>
 </div>

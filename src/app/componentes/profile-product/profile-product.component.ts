@@ -4,11 +4,13 @@ import { ProductCardService } from 'src/app/servicios/product-card.service';
 import { Location } from '@angular/common';
 import { UserDataService } from 'src/app/servicios/user-data.service';
 import { CarritoService } from 'src/app/servicios/carrito.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-profile-product',
   templateUrl: './profile-product.component.html',
-  styleUrls: ['./profile-product.component.scss']
+  styleUrls: ['./profile-product.component.scss'],
+  providers:[MessageService]
 })
 export class ProfileProductComponent {
 
@@ -20,7 +22,8 @@ export class ProfileProductComponent {
     private _location: Location,
     private router:Router,
     private userDataService: UserDataService,
-    private carritoService: CarritoService){
+    private carritoService: CarritoService,
+    private messageService: MessageService){
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -61,13 +64,13 @@ export class ProfileProductComponent {
         subdescripcion = "<p>Eficiencia energetica: " + this.product.eficiencia + "<\p><p>Capacidad: " + this.product.capacidad + "Lts<\p><p>Marca: "+ this.product.marca + "<\p><p>Cantidad de velocidades: " + this.product.velocidades + "<\p><p>Puede picar hielo: " + (this.product.picaHielo ? "Si" : "No") + "</p>"
         break;
       case 'pavas electricas & cafeteras':
-        subdescripcion = "<p>Eficiencia energetica: " + this.product.eficiencia + "<\p><p>Marca: "+ this.product.marca + "<\p><p>Tiene silbadora" + (this.product.silbadora ? "Si" : "No") + "</p>"
+        subdescripcion = "<p>Eficiencia energetica: " + this.product.eficiencia + "<\p><p>Marca: "+ this.product.marca + "<\p>";
         break;
       case 'televisores':
         subdescripcion = "<p>Marca: " + this.product.marca + "<\p><p>Es smart: "+ (this.product.smart ? "Si" : "No") + "<\p><p>Resolucion: " + this.product.resolucion + "</p><p>Tamaño de la pantalla: " + this.product.tamanio; + "\"\"</p>";
         break;
       case 'smartphones':
-        subdescripcion = "<p>Marca: " + this.product.marca + "<\p><p>Modelo: "+ this.product.modelo + "<\p><p>Capacidad: " + this.product.capacidad + "Gbs</p><p>RAM: " + this.product.ram; + "GB</p>" + "<p>Color: " + this.product.color + "<\p><p>Tiene NFC: "+ (this.product.nfc ? "Si" : "No") + "<\p><p>Camara principal: " + this.product.camaraPrincipal + "MB</p><p>Camara trasera: " + this.product.camaraTrasera  + "MB</p><p>Sistema operativo: " + this.product.so + "<\p><p>NUmeros de nucleos: "+ this.product.nucleos + "<\p><p>Tamaño pantalla: " + this.product.pantalla + "\'\'</p><p>Link para ver mas...: " + this.product.link + "</p>";
+        subdescripcion = "<p>Marca: " + this.product.marca + "<\p><p>Modelo: "+ this.product.modelo + "<\p><p>Capacidad: " + this.product.capacidad + "Gbs</p><p>RAM: " + this.product.ram + "GB</p><p>Color: " + this.product.color + "<\p><p>Tiene NFC: "+ (this.product.nfc ? "Si" : "No") + "<\p><p>Camara principal: " + this.product.camaraPrincipal + "MB</p><p>Camara trasera: " + this.product.camaraTrasera  + "MB</p><p>Sistema operativo: " + this.product.so + "<\p><p>NUmeros de nucleos: "+ this.product.nucleos + "<\p><p>Tamaño pantalla: " + this.product.pantalla + `\'\'</p><a href=${this.product.link}>Entra aqui para saber mas..</a>`;
         break;
       case 'equipos de musica':
         subdescripcion = "<p>Marca: " + this.product.marca + "<\p><p>Es inalambrico: "+ (this.product.inalambrico ? "Si" : "No") + "<\p><p>Numero de parlantes: " + (this.product.parlantes ? "Si" : "No") + "</p>" + "</p><p>Tiene luces: " + (this.product.luces ? "Si" : "No"); + "</p>";
@@ -93,8 +96,6 @@ export class ProfileProductComponent {
       case 'sopladora':
         subdescripcion = "<p>Marca: " + this.product.marca + "</p>";
         break;
-      
-
     }
       this.subdescripcion = subdescripcion;
   }
@@ -110,11 +111,10 @@ export class ProfileProductComponent {
     this._location.back()
   }
 
-  goTo(){
+  addCash(){
     if(this.userDataService.getUser() != undefined){
       this.carritoService.addNewProduct(this.product)
-      this.router.navigate(['/home/carrito'])
-      console.log("hola")
+      this.messageService.add({ severity: 'success', summary: 'Agregado exitosamente', detail: 'Tu compra fue agregado exitosamente al carrito' });
     }else{
       this.router.navigate(['/ingreso'])
     }

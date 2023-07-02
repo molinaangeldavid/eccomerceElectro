@@ -2,9 +2,9 @@
     <img src={{product.imagen}} class="card-img-top" alt="...">
     <div class="card-body">
         <div class="description-text">
-            <p class="card-text">{{product.descripcionCorta}}</p>
+            <p class="card-text">{{product.nombre}}</p>
         </div>
-        <h4 class="text-danger"> $ {{product.precio}}</h4>
+        <h4 class="text-danger">{{product.precio | currency}}</h4>
         <button class="btn btn-danger">VER PRODUCTO</button>
     </div>
 </div>

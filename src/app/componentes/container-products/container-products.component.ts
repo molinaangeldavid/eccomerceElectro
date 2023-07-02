@@ -36,8 +36,6 @@ export class ContainerProductsComponent implements OnInit,OnChanges{
   
   ngOnChanges(changes: SimpleChanges): void {
   }
-
-  
     
   onPageChange(event: PageEvent){
     if(event.page == 0){

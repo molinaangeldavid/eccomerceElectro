@@ -10,7 +10,7 @@ export const hogar= [
         peso: 4.5,
         capacidad: 1.5,
         marca: "Samsung",
-        precio: 76.874,
+        precio: 76874,
         accesorios: false
     },
     {
@@ -24,7 +24,7 @@ export const hogar= [
         peso: 3,
         capacidad: 2,
         marca: "Ultracomb",
-        precio: 31.699,
+        precio: 31699,
         accesorios: false
     },
     {
@@ -38,7 +38,7 @@ export const hogar= [
         peso: 5.2,
         capacidad: 0.9,
         marca: "Karcher",
-        precio: 82.605,
+        precio: 82605,
         accesorios: true
     },
     {
@@ -52,7 +52,7 @@ export const hogar= [
         peso: 1.5,
         capacidad: 0.177,
         marca: "Black+Decker",
-        precio: 18.099,
+        precio: 18099,
         accesorios: true
     },
     {
@@ -66,7 +66,7 @@ export const hogar= [
         peso: 4.5,
         capacidad: 1.5,
         marca: "Samsung",
-        precio: 62.499,
+        precio: 62499,
         accesorios: true
     },
     {
@@ -80,7 +80,7 @@ export const hogar= [
         peso: 1.5,
         capacidad: 2,
         marca: "Atma",
-        precio: 43.499,
+        precio: 43499,
         accesorios: true
     },
     {
@@ -95,7 +95,7 @@ export const hogar= [
         peso: 57,
         capacidad: 299,
         marca: "Samsung",
-        precio: 246.519,
+        precio: 246519,
         freezer: true
     },
     {
@@ -110,7 +110,7 @@ export const hogar= [
         peso: 48,
         capacidad: 264,
         marca: "Drean",
-        precio: 182.841,
+        precio: 182841,
         freezer: true
     },
     {
@@ -125,7 +125,7 @@ export const hogar= [
         peso: 61,
         capacidad: 392,
         marca: "Drean",
-        precio: 292.489,
+        precio: 292489,
         freezer: true
     },
     {
@@ -140,7 +140,7 @@ export const hogar= [
         peso: 17,
         capacidad: 83,
         marca: "Siam",
-        precio: 137.999,
+        precio: 137999,
         freezer: false
     },
     {
@@ -155,7 +155,7 @@ export const hogar= [
         peso: 17,
         capacidad: 83,
         marca: "Philco",
-        precio: 150.699,
+        precio: 150699,
         freezer: false
     },
     {
@@ -170,7 +170,7 @@ export const hogar= [
         peso: 4.9,
         capacidad: 25,
         marca: "BGH",
-        precio: 30.999,
+        precio: 30999,
         electrico: true,
         gas: false
     },
@@ -186,7 +186,7 @@ export const hogar= [
         peso: 26.5,
         capacidad: 45,
         marca: "Escorial",
-        precio: 64.999,
+        precio: 64999,
         electrico: false,
         gas: true
     },
@@ -202,7 +202,7 @@ export const hogar= [
         peso: 33,
         capacidad: 45,
         marca: "Philco",
-        precio: 239.999,
+        precio: 239999,
         electrico: true,
         gas: false
     },
@@ -218,7 +218,7 @@ export const hogar= [
         peso: 41,
         capacidad: 45,
         marca: "Peabody",
-        precio: 44.899,
+        precio: 44899,
         electrico: true,
         gas: false
     },
@@ -234,7 +234,7 @@ export const hogar= [
         peso: 32,
         capacidad: 39,
         marca: "Escorial",
-        precio: 73.999,
+        precio: 73999,
         electrico: false,
         gas: true
     },
@@ -250,7 +250,7 @@ export const hogar= [
         peso: 26.5,
         capacidad: 85,
         marca: "Señorial",
-        precio: 85.949,
+        precio: 85949,
         electrico: false,
         gas: true
     },
@@ -266,7 +266,7 @@ export const hogar= [
         peso: 20,
         capacidad: 53.5,
         marca: "Escorial",
-        precio: 59.999,
+        precio: 59999,
         electrico: true,
         gas: false        
     },
@@ -282,7 +282,7 @@ export const hogar= [
         peso: 17,
         capacidad: 65,
         marca: "Señorial",
-        precio: 59.999,
+        precio: 60999,
         electrico: true,
         gas: false
     },
@@ -298,7 +298,7 @@ export const hogar= [
         peso: 36,
         capacidad: 120,
         marca: "Sherman",
-        precio: 103.690,
+        precio: 103690,
         electrico: false,
         gas: true
     },
@@ -313,7 +313,7 @@ export const hogar= [
         eficiencia: "B",
         peso: 13,
         marca: "Peabody",
-        precio: 29.258,
+        precio: 29258,
         electrico: true,
         gas: false
     },
@@ -328,7 +328,7 @@ export const hogar= [
         eficiencia: "D",
         peso: 20,
         marca: "Eskabe",
-        precio: 55.477,
+        precio: 55477,
         electrico: false,
         gas: true
     },
@@ -343,7 +343,7 @@ export const hogar= [
         eficiencia: "A",
         peso: 10,
         marca: "Philco",
-        precio: 215.999
+        precio: 215999
     },
     {
         codigo: 1502,
@@ -356,7 +356,7 @@ export const hogar= [
         eficiencia: "A",
         peso: 14,
         marca: "Sansei",
-        precio: 292.999
+        precio: 292999
     },
     {
         codigo: 1503,
@@ -369,7 +369,7 @@ export const hogar= [
         eficiencia: "A",
         peso: 13,
         marca: "BGH",
-        precio: 223.999
+        precio: 223999
     },
     {
         codigo: 1603,
@@ -382,7 +382,7 @@ export const hogar= [
         eficiencia: "B",
         peso: 10.2,
         marca: "Atma",
-        precio: 44.479,
+        precio: 44479,
         digital: true
     },
     {
@@ -396,7 +396,7 @@ export const hogar= [
         eficiencia: "B",
         peso: 10.2,
         marca: "BGH",
-        precio: 52.719,
+        precio: 52719,
         digital: true
     },
     {
@@ -410,7 +410,7 @@ export const hogar= [
         eficiencia: "B",
         peso: 10.2,
         marca: "Sansei",
-        precio: 36.699,
+        precio: 36699,
         digital: false
     },
     {
@@ -422,7 +422,7 @@ export const hogar= [
         imagen: "../assets/ventilador-de-techo-Peabody-PE-VTR42-blanco.webp",
         eficiencia: "B",
         marca: "Peabody",
-        precio: 84.999,
+        precio: 84999,
         techo: true,
     },
     {
@@ -434,7 +434,7 @@ export const hogar= [
         imagen: "../assets/ventilador-de-techo-Philco-VTEP5619N-blanco.webp",
         eficiencia: "B",
         marca: "Philco",
-        precio: 27.999,
+        precio: 27999,
         techo: true,
     },
     {
@@ -446,7 +446,7 @@ export const hogar= [
         imagen: "../assets/ventilador-de-techo-Philco-VTEP5619N-blanco.webp",
         eficiencia: "A",
         marca: "Yelmo",
-        precio: 27.999,
+        precio: 27999,
         techo: false,
     },
     {
@@ -458,7 +458,7 @@ export const hogar= [
         imagen: "../assets/plancha-a-vapor-Atma-PAV1217N-220V.webp",
         eficiencia: "A",
         marca: "Atma",
-        precio: 13.999,
+        precio: 13999,
         tipo: "vapor"
     },
     {
@@ -470,19 +470,19 @@ export const hogar= [
         imagen: "../assets/plancha-A-Vapor-Spica-Sp-890.webp",
         eficiencia: "A",
         marca: "Spica",
-        precio: 13.999,
+        precio: 13999,
         tipo: "seco"
     },
     {
         codigo: 1803,
         categoria: "planchas",
-        nombre: "plancha Seca 1200 Watts Smartlife Sl-di2386pn",
+        nombre: "Plancha Seca 1200 Watts Smartlife Sl-di2386pn",
         descripcion: "Plancha tipo seco que elimina hasta las arrugas mas imperceptibles. Solo de uso casero",
         descripcionCorta: "Plancha de tipo seco SmartLife que elimina hasta las arrugas mas dificiles.",
         imagen: "../assets/plancha-Seca-Smartlife-Sl-di2386pn.webp",
         eficiencia: "A",
         marca: "Smartlife",
-        precio: 7.440,
+        precio: 7440,
         tipo: "seco"
     },
     {
@@ -495,7 +495,7 @@ export const hogar= [
         eficiencia: "A",
         capacidad: 1.5,
         marca: "Peabody",
-        precio: 14.599,
+        precio: 14599,
         velocidades: 5,
         picaHielo: true
     },
@@ -509,7 +509,7 @@ export const hogar= [
         eficiencia: "A",
         capacidad:1.5,
         marca: "Spica",
-        precio: 16.999,
+        precio: 16999,
         velocidades: 5,
         picaHielo: false
     },
@@ -523,7 +523,7 @@ export const hogar= [
         eficiencia: "A",
         capacidad: 1.5,
         marca: "Smartlife",
-        precio: 17.089,
+        precio: 17089,
         velocidades: 2,
         picaHielo: true
     },
@@ -536,20 +536,40 @@ export const hogar= [
         imagen: "../assets/pava-Silbadora-Acero-Inoxidable-2,5.webp",
         eficiencia: "A",
         marca: "Crystal Rocks",
-        precio: 4.894,
-        silbadora: true
+        precio: 4894,
     },
     {
         codigo: 10005,
         categoria: "pavas electricas & cafeteras",
         nombre: "Pava De Acero Inoxidable Golden Art",
-        descripcion: "Pava de acero Inoxidable golder Art. Una pava de duracion y de calidad.",
+        descripcion: "Pava de acero Inoxidable golder Art. Una pava de duracion y de calidad. Sin silbadora",
         descripcionCorta: "Pava Golden Art con mango de madera. ",
         imagen: "../assets/pava-Golden-De-Acero-Inoxidable.webp",
         eficiencia: "A",
         marca: "Golden Art",
-        precio: 9.722,
-        silbadora: false
+        precio: 9722,
+    },
+    {
+        codigo: 10006,
+        categoria: "pavas electricas & cafeteras",
+        nombre: "Cafetera Moulinex Café City Perfecta FG3205",
+        descripcion: "Cafetera Moulinex Cafe semiautomatica negra, con una capacidad de 600 Ml, tiene filtro permanente. Permite llenar 8 tazas",
+        descripcionCorta: "",
+        imagen: "../assets/cafetero-moulinex.webp",
+        eficiencia: "A",
+        marca: "Moulinex",
+        precio: 15.129,
+    },
+    {
+        codigo: 10007,
+        categoria: "pavas electricas & cafeteras",
+        nombre: "Cafetera Eléctrica Filtro 0.6 L Atma Ca2180p",
+        descripcion: "Cafetera electrica Filtro de 0.6L de marca Atma, permite llenar 6 tazas. Tiene dispositivo antigoteo y su forma de usar es la mas facil. Podras realizar los mejores cafes.",
+        descripcionCorta: "Pava Golden Art con mango de madera. ",
+        imagen: "../assets/cafetera-atma.webp",
+        eficiencia: "A",
+        marca: "Atma",
+        precio: 9327,
     },
     {
         codigo: 10105,
@@ -559,7 +579,7 @@ export const hogar= [
         descripcionCorta: "Televisor led 4K Noblex UltraHD. Smart con conexion a  ",
         imagen: "../assets/tv-Led-4k-50-Noblex-Dk50x7500.webp",
         marca: "Noblex",
-        precio: 124.999,
+        precio: 124999,
         smart: true,
         resolucion: "4K",
         tamanio: 50
@@ -572,7 +592,7 @@ export const hogar= [
         descripcionCorta: "Televisor Smart Sansei de 32 pulgadas",
         imagen: "../assets/smart-Tv-Sansei-Tds2332.webp",
         marca: "Sansei",
-        precio: 58.499,
+        precio: 58499,
         smart: true,
         resolucion: "HD",
         tamanio: 32
@@ -585,7 +605,7 @@ export const hogar= [
         descripcionCorta: "Televisor Smart Philco Full HD. Con conexion WIFI y 2 entradas usb y 2 HDMI",
         imagen: "../assets/smart-Tv-43-Philco.webp",
         marca: "Philco",
-        precio: 81.999,
+        precio: 81999,
         smart: true,
         resolucion: "Full HD",
         tamanio: 43
@@ -598,7 +618,7 @@ export const hogar= [
         descripcionCorta: "Televisor Smart Philips 4K. Con sistema Android. Posee almacenamiento de 8gb.",
         imagen: "../assets/smart-TV-Philips-7400-Series.webp",
         marca: "Philips",
-        precio: 154.999,
+        precio: 154999,
         smart: true,
         resolucion: "4K",
         tamanio: 50
@@ -611,7 +631,7 @@ export const hogar= [
         descripcionCorta: "Televisor Smart Noblex 4K, Posee los mejores programas para que disfrutes con tu familia las mejores peliculas",
         imagen: "../assets/smart-Tv-Noblex.webp",
         marca: "Noblex",
-        precio: 219.999,
+        precio: 219999,
         smart: true,
         resolucion: "4K",
         tamanio: 55
@@ -625,7 +645,7 @@ export const hogar= [
         imagen: "../assets/samsung-Galaxy-A04-128-GB-negro-4-GB-RAM.webp",
         marca: "Samsung",
         modelo: "Galaxy A04",
-        precio: 75.999,
+        precio: 75999,
         capacidad: 128,
         ram: 4,
         color: "negro",
@@ -641,12 +661,12 @@ export const hogar= [
         codigo: 10203,
         categoria: "smartphones",
         nombre: "Motorola Edge 30 Fusion 256 GB lazuli blue 12 GB RAM",
-        descripcion: "Telefono Galaxy a04 con capacidad interna de 128 Gb y 4 de ram",
-        descripcionCorta: "Telefono Galaxy a04 con capacidad interna de 128 Gb y 4 de ram",
+        descripcion: "Telefono Edge 30 Fusion con 256 GB de almacenamiento interno y nada mas y nada menos que 12 GB de memoria Ram. Telefono con una capacida increible de camara trasera de 50MP",
+        descripcionCorta: "",
         imagen: "../assets/motorola-Edge-30.webp",
         marca: "Motorola",
         modelo: "Edge 30",
-        precio: 249.999,
+        precio: 249999,
         capacidad: 256,
         ram: 12,
         color: "azul",
@@ -667,7 +687,7 @@ export const hogar= [
         imagen: "../assets/moto-G52-128-GB-charcoal-grey-6-GB.webp",
         marca: "Motorola",
         modelo: "G52",
-        precio: 162.800,
+        precio: 162800,
         capacidad: 128,
         ram: 6,
         color: "gris",
@@ -688,7 +708,7 @@ export const hogar= [
         imagen: "../assets/samsung-Galaxy-A23-128-Gb-Light.webp",
         marca: "Samsung",
         modelo: "A23",
-        precio: 150.999,
+        precio: 150999,
         capacidad: 128,
         ram: 4,
         color: "azul",
@@ -709,7 +729,7 @@ export const hogar= [
         imagen: "../assets/noblex-A50-Dual-SIM-32-GB.webp",
         marca: "Noblex",
         modelo: "A50",
-        precio: 22.399,
+        precio: 22399,
         capacidad: 32,
         ram: 2,
         color: "negro",
@@ -730,7 +750,7 @@ export const hogar= [
         imagen: "../assets/xiaomi-Mi-11-Lite-5G-Dual-SIM-12.webp",
         marca: "Xiaomi",
         modelo: "Mi 11",
-        precio: 218.600,
+        precio: 218600,
         capacidad: 128,
         ram: 6,
         color: "negro",
@@ -750,7 +770,7 @@ export const hogar= [
         descripcionCorta: "Home theater inalambrico Noga. Para que disfrutes tus mejores musicas, peliculas y mas.",
         imagen: "../assets/home-Theater-Equipo-Musica-Bluetooth.webp",
         marca: "Noga",
-        precio: 38.999,
+        precio: 38999,
         inalambrico: true,
         parlantes: 3,
         luz: false
@@ -763,7 +783,7 @@ export const hogar= [
         descripcionCorta: "Equipo de musica Daewoo con Blueetooth. Tiene luz led",
         imagen: "../assets/equipo-Música-Daewoo-Audio-Usb.webp",
         marca: "Daewoo",
-        precio: 62.990,
+        precio: 62990,
         inalambrico: false,
         parlantes: 1,
         luz: true
@@ -776,7 +796,7 @@ export const hogar= [
         descripcionCorta: "Equipo de musica Excess con conexion Blueetooth, usb y SD",
         imagen: "../assets/equipo-De-Musica-Dj-Y-Luz-Rítmica.webp",
         marca: "Excess",
-        precio: 45.999,
+        precio: 45999,
         inalambrico: true,
         parlantes: 1,
         luz: true
@@ -789,7 +809,7 @@ export const hogar= [
         descripcionCorta: "Computadora de escritorio con grafica de video interna. Procesador Ryzen 5. Posee todos los accesorios para usar.",
         imagen: "../assets/pc-Armada-Gamer-Amd-Ryzen-5.webp",
         marca: "amd",
-        precio: 269.699,
+        precio: 269699,
         capacidad: 480,
         ram: 16,
         grafico: "Radeon RX Vega",
@@ -802,7 +822,7 @@ export const hogar= [
         descripcionCorta: "Pc de escritorio Intel Dual Core . Intel 5 generacion",
         imagen: "../assets/pc-Armada-Pro-Intel-3.6ghz.webp",
         marca: "Intel",
-        precio: 147.999,
+        precio: 147999,
         capacidad: 240,
         ram: 8,
         grafico: "Intel graphics",
@@ -815,7 +835,7 @@ export const hogar= [
         descripcionCorta: "Playstation 5 con 825GB. Resolucion 3000px. 16Ram",
         imagen: "../assets/sony-PlayStation-5-825GB-God-of-War-Ragnarok.webp",
         marca: "Playstation",
-        precio: 439.999,
+        precio: 439999,
         capacidad: 825,
         ram: 16,
         conJuegos: true,
@@ -829,7 +849,7 @@ export const hogar= [
         descripcionCorta: "Nintento switch 64GB. color rojo neón, azul neón y negro",
         imagen: "../assets/Nintento-switch-64GB.webp",
         marca: "Nintendo",
-        precio: 298.018,
+        precio: 298018,
         capacidad: 64,
         ram: 4,
         conJuegos: false,
@@ -843,7 +863,7 @@ export const hogar= [
         descripcionCorta: "Secador de pelo Atma color negro",
         imagen: "../assets/secador-de-pelo-Atma-SP8964.webp",
         marca: "Atma",
-        precio: 9.899,
+        precio: 9899,
         velocidad: 2
     },
     {
@@ -854,7 +874,7 @@ export const hogar= [
         descripcionCorta: "Secador de pelo GAMA con 1.7mts de cable",
         imagen: "../assets/secador-de-pelo-GA-MA-Italy.webp",
         marca: "Gama",
-        precio: 16.899,
+        precio: 16899,
         velocidad: 2
     },
     {
@@ -865,7 +885,7 @@ export const hogar= [
         descripcionCorta: "Secador de pelo Atma con 3 velocidades. accesorios de peine y mas.",
         imagen: "../assets/secador-De-Pelo-Atma-Sp8970p-De-1800w.webp",
         marca: "Atma",
-        precio: 10.999,
+        precio: 10999,
         velocidad: 3
     },
     {
@@ -877,7 +897,7 @@ export const hogar= [
         imagen: "../assets/depiladora-velvet.webp",
         marca: "Gama",
         color:"rosa",
-        precio: 11.489,
+        precio: 11489,
         velocidad: 2
         
     },
@@ -890,7 +910,7 @@ export const hogar= [
         imagen: "../assets/depiladora-Care-By-Gadnic.webp",
         marca: "Gadnic",
         color:"verde",
-        precio: 8.999,
+        precio: 8999,
         velocidad: 2
     },
     {
@@ -913,7 +933,7 @@ export const hogar= [
         descripcionCorta: "Cortacesped para dejar tu patio perfecto. Tiene bolsa recolectora. 3 posicion de corte",
         imagen: "../assets/cortadora-de-pasto-electrica-Lusqtoff.webp",
         marca: "Lusqtoff",
-        precio: 84.444,
+        precio: 84444,
         bolsa: true
     },
     {
@@ -924,7 +944,7 @@ export const hogar= [
         descripcionCorta: "Motosierra a nafta Omaha para cortar esos arboles bien jodidos. Pero no tale de mas",
         imagen: "../assets/motosierra1.webp",
         marca: "Omaha",
-        precio: 33.999
+        precio: 33999
     },
     {
         codigo: 11100,
@@ -934,7 +954,7 @@ export const hogar= [
         descripcionCorta: "Sopladora para soplar todas las hojas que estan ahi. Mas potente que un secador",
         imagen: "../assets/sopladora1.webp",
         marca: "Otal",
-        precio: 21.364
-    },
+        precio: 21364
+    }
 
 ]

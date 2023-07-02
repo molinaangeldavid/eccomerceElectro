@@ -1,6 +1,10 @@
 <div class="login-form">
 	<div class="login-form-box font-monospace">
 		<div class="login-form-header">
+			<div class="my-2 img-logIn">
+				<img src="../../../assets/shop.svg" alt="">
+				<span>ElectroShop</span>
+			</div>
 			<div class="d-flex justify-content-between align-content-center mb-3">
 				<h2 class="align-self-center">Log In</h2>
 				<button class="button-inicio btn btn-light"><a routerLink="/home">Inicio</a></button>
@@ -30,12 +34,14 @@
 				<fa-icon [icon]="exclamation"></fa-icon>
 				Contraseña incorrecta
 			</span>
-			<div class="form-check form-switch">
+			<!-- <div class="form-check form-switch">
 				<input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
 				<label class="form-check-label" for="flexSwitchCheckDefault">Recordarme</label>
-			</div>
+			</div> -->
 			
-			<button class="button-submit" type="submit" (click)="logIn()">Enviar</button>
+			<div class="m-auto d-flex justify-content-center">
+				<button class="button-submit" type="submit" (click)="logIn()">Enviar</button>
+			</div>
 		</form>
 	</div>
 </div>

@@ -12,11 +12,10 @@ import { taller } from 'src/app/data/taller';
 })
 export class HomeComponent implements OnInit,OnChanges{
 
+  renderHeader!: boolean
 
-  constructor(private productsService:ProductsService){
-  }
+  constructor(){}
 
-  products!: any[];
 
   ngOnInit(){
     
@@ -24,5 +23,6 @@ export class HomeComponent implements OnInit,OnChanges{
 
   ngOnChanges(changes: SimpleChanges): void {
   }
+
 
 }
