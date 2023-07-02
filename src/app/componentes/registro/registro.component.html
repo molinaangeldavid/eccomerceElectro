@@ -21,14 +21,14 @@
 			</div>
 	
 			<div *ngIf="username.invalid && (username.dirty || username.touched) && username"
-			class="alert">
+			class="error-validation-sign-up alert">
 			
-				<span class="error-validation-sign-up" *ngIf="username.errors?.['required']">
+				<span *ngIf="username.errors?.['required']">
 					El nombre de usuario es requerido
 				</span>
-				<div  class="error-validation-sign-up" *ngIf="username.errors?.['minlength']">
+				<span *ngIf="username.errors?.['minlength']">
 					El nombre de usuario debe tener 6 caracteres minimo.
-				</div>
+				</span>
 			
 			</div>
 			<div class="input-item">
@@ -44,14 +44,14 @@
 				[pattern]="patternEmail">
 			</div>
 			<div *ngIf="email.invalid && (email.dirty || email.touched)"
-			class="alert">
+			class="error-validation-sign-up alert">
 			
-				<span class="error-validation-sign-up" *ngIf="email.errors?.['required']">
+				<span *ngIf="email.errors?.['required']">
 					El correo electronico es requerido.
 				</span>
-				<div class="error-validation-sign-up">
+				<span>
 					Correo electronico no valido
-				</div>
+				</span>
 			
 			</div>
 			<div class="input-item">
@@ -66,13 +66,13 @@
 				#emailConfirm="ngModel">
 			</div>
 			<div *ngIf="emailConfirm.invalid && (emailConfirm.dirty || emailConfirm.touched)"
-			class="alert">
-				<span class="error-validation-sign-up" *ngIf="emailConfirm.errors?.['required']">
+			class="error-validation-sign-up alert">
+				<span *ngIf="emailConfirm.errors?.['required']">
 					La confirmacion del correo electronico es requerido.
 				</span>
 			</div>
-			<div class="alert" *ngIf="this.confirmationFields.emailConfirm != this.registerAccount.email">
-				<span class="error-validation-sign-up">Los correos electronicos no coinciden.</span>
+			<div class="error-validation-sign-up alert" *ngIf="this.confirmationFields.emailConfirm != this.registerAccount.email">
+				<span >Los correos electronicos no coinciden.</span>
 			</div>
 			<div class="input-item">
 				<label for="fechaNacimiento">Fecha de nacimiento</label>
@@ -81,14 +81,16 @@
 				name="fechaNacimiento" 
 				id="fechaNacimiento"
 				class="form-control" 
+				min="1933-01-01"
+				max="2005-01-01"
 				required
 				[(ngModel)]="registerAccount.fechaNacimiento" 
 				#fechaNacimiento="ngModel">
 			</div>
 			<div *ngIf="fechaNacimiento.invalid && (fechaNacimiento.dirty || fechaNacimiento.touched)"
-			class="alert">
+			class="error-validation-sign-up alert">
 			
-				<span class="error-validation-sign-up" *ngIf="fechaNacimiento.errors?.['required']">
+				<span *ngIf="fechaNacimiento.errors?.['required']">
 					Debe ingresar una fecha de nacimiento valido
 				</span>
 			
@@ -106,14 +108,14 @@
 				#password="ngModel">
 			</div>
 			<div *ngIf="password.invalid && (password.dirty || password.touched)"
-			class="alert">
+			class="error-validation-sign-up alert">
 			
-				<span class="error-validation-sign-up" *ngIf="password.errors?.['required']">
+				<span *ngIf="password.errors?.['required']">
 					La contraseña es requerido
 				</span>
-				<div  class="error-validation-sign-up" *ngIf="password.errors?.['minlength']">
+				<span  *ngIf="password.errors?.['minlength']">
 					La contraseña debe tener 8 caracteres minimo
-				</div>
+				</span>
 			
 			</div>
 			<div class="input-item">
@@ -128,19 +130,19 @@
 				#passwordConfirm="ngModel">
 			</div>
 			<div *ngIf="passwordConfirm.invalid && (passwordConfirm.dirty || passwordConfirm.touched)"
-			class="alert">
+			class="error-validation-sign-up alert">
 			
-				<span class="error-validation-sign-up" *ngIf="passwordConfirm.errors?.['required']">
+				<span *ngIf="passwordConfirm.errors?.['required']">
 					La confirmacion de la contraseña es requerido.
 				</span>
 			</div>
-			<div *ngIf="this.confirmationFields.passwordConfirm != this.registerAccount.password" class="alert">
+			<div *ngIf="this.confirmationFields.passwordConfirm != this.registerAccount.password" class="alert error-validation-sign-up">
 				<span class="error-validation-sign-up">Las contraseñas no coinciden.</span>	
 			</div>
 			<!-- <span class="error-validation-sign-up" *ngIf="passwordEqual">Las contraseñas no coinciden</span> -->
-			<div class="error-validation-sign-up" *ngIf="allFields">
+			<div class="error-validation-sign-up alert"  *ngIf="allFields">
 				<fa-icon [icon]="exclamation"></fa-icon>
-				<span>  Debe completar todos los campos</span>
+				<span>  Debe completar todos los campos correctamente</span>
 			</div>
 			<button class="button-submit" (click)="signUp()">Registrar</button>
 		</form>

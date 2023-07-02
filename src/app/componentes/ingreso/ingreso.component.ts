@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserDataService } from 'src/app/servicios/user-data.service';
 import { faExclamation } from '@fortawesome/free-solid-svg-icons';
+import { Message } from 'primeng/api';
 
 @Component({
   selector: 'app-ingreso',
@@ -13,6 +14,13 @@ export class IngresoComponent {
   constructor(private router:Router,private userData: UserDataService){
 
   }
+
+  messagesArray: Message[] = [
+    { severity: 'error', summary: 'Error', detail: 'El usuario ingresado no existe' },
+    { severity: 'error', summary: 'Error', detail: 'La contraseña ingresada es incorrecta' }
+  ]
+
+  messageUser: Message = this.messagesArray[0];
 
   exclamation = faExclamation;
 

@@ -30,31 +30,37 @@ export class RegistroComponent {
     passwordConfirm: undefined
   }
 
-  emailEqual: boolean = false;
-  passwordEqual: boolean = false;
+  // emailEqual: boolean = false;
+  // passwordEqual: boolean = false;
 
-  allFields: boolean = true;
+  allFields: boolean = false;
 
   valAllFields(): boolean{
-    if(this.registerAccount.username === undefined){
+    if(this.registerAccount.username === undefined || this.registerAccount.username.length < 6){
+      this.allFields = true;
       return false;
     }else{
-      if(this.registerAccount.email === undefined){
+      if(this.registerAccount.email === undefined || this.patternEmail.test(this.registerAccount.email)){
+        this.allFields = true;
         return false;
       }else{
-        if(this.confirmationFields.emailConfirm === undefined){
+        if(this.confirmationFields.emailConfirm === undefined || this.confirmationFields.emailConfirm != this.registerAccount.email){
+          this.allFields = true;
           return false;
         }else{
           if(this.registerAccount.fechaNacimiento === undefined){
+            this.allFields = true;
             return false;
           }else{
-            if(this.registerAccount.password === undefined){
+            if(this.registerAccount.password === undefined || this.registerAccount.password.length < 8){
+              this.allFields = true;
               return false;
             }else{
-              if(this.confirmationFields.passwordConfirm === undefined){
+              if(this.confirmationFields.passwordConfirm === undefined || this.confirmationFields.passwordConfirm != this.registerAccount.password){
+                this.allFields = true;
                 return false;
               }else{
-                this.allFields = false;
+                this.allFields = false
                 return true;
               }
             }
@@ -79,12 +85,6 @@ export class RegistroComponent {
         localStorage.setItem(this.registerAccount.username,JSON.stringify(this.registerAccount))
         this.router.navigate(["/"])
       }else{
-        Swal.fire({
-          icon: 'error',
-          title: 'Usuario existente',
-          text: 'Este usuario existe en nuestra base de datos',
-          footer: '<a routerLink="ingreso">Ingresa con este usuario</a>'
-        })
       }
     }
   }
