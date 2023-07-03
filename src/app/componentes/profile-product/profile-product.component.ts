@@ -4,13 +4,11 @@ import { ProductCardService } from 'src/app/servicios/product-card.service';
 import { Location } from '@angular/common';
 import { UserDataService } from 'src/app/servicios/user-data.service';
 import { CarritoService } from 'src/app/servicios/carrito.service';
-import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-profile-product',
   templateUrl: './profile-product.component.html',
-  styleUrls: ['./profile-product.component.scss'],
-  providers:[MessageService]
+  styleUrls: ['./profile-product.component.scss']
 })
 export class ProfileProductComponent {
 
@@ -22,8 +20,7 @@ export class ProfileProductComponent {
     private _location: Location,
     private router:Router,
     private userDataService: UserDataService,
-    private carritoService: CarritoService,
-    private messageService: MessageService){
+    private carritoService: CarritoService){
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -34,13 +31,13 @@ export class ProfileProductComponent {
     let subdescripcion = ""
     switch(this.product.categoria){
       case 'aspiradoras':
-        subdescripcion = "<p><p>Color: " + this.product.color + "</p><p>Peso: " + this.product.peso + "Kgs</p><p>Capacidad: " + this.product.capacidad + "Lts</p><p>Marca: " + this.product.marca + "</p><p>Incluye accesorios: " + (this.product.accesorios ? "si" : "No") + "</p>"
+        subdescripcion = "<p>Color: " + this.product.color + "</p><p>Peso: " + this.product.peso + "Kgs</p><p>Capacidad: " + this.product.capacidad + "Lts</p><p>Marca: " + this.product.marca + "</p><p>Incluye accesorios: " + (this.product.accesorios ? "si" : "No") + "</p>"
         break;
       case 'neveras':
-        subdescripcion = "<p><p>Altura: " + this.product.altura + "Mms</p><p>Eficiencia energetica: " + this.product.eficiencia + "</p><p>Peso: " + this.product.peso + "Kgs</p><p>Capacidad: " + this.product.capacidad + "Lts</p><p>Marca: "+ this.product.marca + "</p><p>Tiene Freezer: " + (this.product.freezer ? "Si" : "No")  + "</p>";
+        subdescripcion = "<p>Altura: " + this.product.altura + "Mms</p><p>Eficiencia energetica: " + this.product.eficiencia + "</p><p>Peso: " + this.product.peso + "Kgs</p><p>Capacidad: " + this.product.capacidad + "Lts</p><p>Marca: "+ this.product.marca + "</p><p>Tiene Freezer: " + (this.product.freezer ? "Si" : "No")  + "</p>";
         break;
       case 'hornos & cocinas':
-        subdescripcion = "<p><p>Altura: " + this.product.altura + "Mms</p>Eficiencia energetica: " + this.product.eficiencia + "</p><p>Peso: " + this.product.peso + "Kgs</p><p>Capacidad: " + this.product.capacidad + "Lts<\p><p>Marca: "+ this.product.marca + "<\p><p>Es electrico: " + (this.product.electrico ? "Si" : "No") + "<\p><p>Es a gas: " + (this.product.gas ? "Si" : "No")  + "</p>";
+        subdescripcion = "<p>Altura: " + this.product.altura + "Mms</p>Eficiencia energetica: " + this.product.eficiencia + "</p><p>Peso: " + this.product.peso + "Kgs</p><p>Capacidad: " + this.product.capacidad + "Lts<\p><p>Marca: "+ this.product.marca + "<\p><p>Es electrico: " + (this.product.electrico ? "Si" : "No") + "<\p><p>Es a gas: " + (this.product.gas ? "Si" : "No")  + "</p>";
         break;
       case 'termotanques':
         subdescripcion = "<p>Altura: " + this.product.altura + "Mms<\p><p>Eficiencia energetica: " + this.product.eficiencia + "<\p><p>Peso: " + this.product.peso + "Kgs<\p><p>Capacidad: " + this.product.capacidad + "Lts<\p><p>Marca: "+ this.product.marca + "<\p><p>Es electrico: " + (this.product.electrico ? "Si" : "No") + "<\p><p>Es a gas: " + (this.product.gas ? "Si" : "No") +  + "</p>"
@@ -113,11 +110,11 @@ export class ProfileProductComponent {
 
   addCash(){
     if(this.userDataService.getUser() != undefined){
-      this.carritoService.addNewProduct(this.product)
-      this.messageService.add({ severity: 'success', summary: 'Agregado exitosamente', detail: 'Tu compra fue agregado exitosamente al carrito' });
+      this.carritoService.addNewProduct(this.product);
     }else{
       this.router.navigate(['/ingreso'])
     }
+    this.carritoService.countOneToCart()
   }
 
 

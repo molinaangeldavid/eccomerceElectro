@@ -1,9 +1,10 @@
 
-<div class="w-75 m-auto py-3">
-    <p-table [value]="carritoProducts">
+<div class="w-75 m-auto py-3" >
+    <p-table [value]="carritoProducts" *ngIf="carritoProducts.length > 0">
         <ng-template pTemplate="header">
             <tr>
                 <th>Codigo</th>
+                <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Marca</th>
                 <th>Precio</th>
@@ -13,13 +14,27 @@
         <ng-template pTemplate="body" let-product>
             <tr>
                 <td>{{ product.codigo }}</td>
+                <td>
+                    <img src={{product.imagen}} alt="p" style="width: 100px;">
+                </td> 
                 <td>{{ product.nombre }}</td>
                 <td>{{ product.marca }}</td>
-                <td>{{ product.precio }}</td>
-                <td><button type="button" class="btn btn-danger" (click)="eliminarProducto(product)">Eliminar</button></td>
+                <td>{{ product.precio | currency }}</td>
+                <td>
+                    <p-button type="button" styleClass="p-button-danger" (click)="eliminarProducto(product)" label="Eliminar"></p-button>
+                </td>
             </tr>
         </ng-template>
     </p-table>
+
+    <div *ngIf="carritoProducts.length == 0">
+        <p>Este carrito no tiene ningun producto agregado</p>
+    </div>
+
+    <div class="w-100 d-flex justify-content-center">
+        <p-button styleClass="p-button-raised p-button-text me-5" (click)="goToShopping()">Seguir comprando</p-button>
+        <p-button styleClass="p-button-raised p-button-text" *ngIf="carritoProducts.length > 0">Ir a pagar</p-button>
+    </div>
 </div>
 
 

@@ -1,24 +1,39 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarritoService {
 
-  productsCarrito: any[] = [];
+  productsCart: any[] = [];
 
   constructor() { }
 
-  getProductsCarrito(){
-    return this.productsCarrito;
+  numberOfProducts: BehaviorSubject<number> = new BehaviorSubject<number>(0)
+
+  getProductsCarts(){
+    return this.productsCart;
   }
 
-  setProductsCarrito(value: any){
-    this.productsCarrito = value
+  setProductsCarts(value: any){
+    this.productsCart = value
   }
 
   addNewProduct(product: any){
-    this.productsCarrito.push(product)
+    this.productsCart.push(product)
+  }
+
+  getNumberProducts(){
+    return this.numberOfProducts;
+  }
+
+  countOneToCart(){
+    this.numberOfProducts.next(this.numberOfProducts.getValue() + 1)
+  }
+
+  deleteOneToCart(){
+    this.numberOfProducts.next(this.numberOfProducts.getValue() - 1)
   }
 
 }

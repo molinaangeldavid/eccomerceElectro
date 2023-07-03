@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faExclamation } from '@fortawesome/free-solid-svg-icons';
-import Swal from 'sweetalert2';
+import { MessageService } from 'primeng/api';
   
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.scss']
+  styleUrls: ['./registro.component.scss'],
+  providers: [MessageService]
 })
 export class RegistroComponent {
 
-  constructor(private router: Router){
+  constructor(private router: Router,private messageService: MessageService){
 
   }
 
@@ -83,6 +84,7 @@ export class RegistroComponent {
     if(this.valAllFields()){
       if(!this.existAccount()){
         localStorage.setItem(this.registerAccount.username,JSON.stringify(this.registerAccount))
+        this.messageService.add({ severity: 'success', summary: 'Usuario registrado', detail: 'El usuario se ha registrado exitosamente.' });
         this.router.navigate(["/"])
       }else{
       }
