@@ -28,6 +28,7 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
+import { BadgeModule } from 'primeng/badge';
 
 
 @NgModule({
@@ -60,6 +61,7 @@ import { ToastModule } from 'primeng/toast';
     CardModule,
     TableModule,
     ToastModule,
+    BadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

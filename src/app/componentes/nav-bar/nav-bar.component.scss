@@ -14,14 +14,11 @@
     color: #fff;
 }
 
-.color-shopping{
-    color: #fff;
-    font-weight: 900;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    background-color:#141212;
-    border-radius: 50%;
-    padding: 3px;
-
+.cart-icon{
+    font-size: 1.5rem;
+    color: rgb(238, 223, 223);
+    position: relative;
+    top: 5px;
 }
 
 @media screen and (max-width:990px){

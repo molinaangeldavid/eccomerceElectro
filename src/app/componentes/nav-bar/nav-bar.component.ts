@@ -3,6 +3,7 @@ import { ProductsService } from 'src/app/servicios/products.service';
 import { hogar } from 'src/app/data/hogar';
 import { Router } from '@angular/router';
 import { UserDataService } from 'src/app/servicios/user-data.service';
+import { CarritoService } from 'src/app/servicios/carrito.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -17,26 +18,21 @@ export class NavBarComponent {
   valueSvg: string = '<img src="../../../assets/person-circle.svg" alt="profile">'
   value!: string;
 
-  shop!: number
+  productsShop: any = 0;
   
   constructor(
     private productsService: ProductsService, 
     private router: Router,
-    private userService: UserDataService){
+    private userService: UserDataService,
+    private carritoService: CarritoService){
       if(userService.getUser() != undefined){
         this.mostrar = true
         this.user = this.userService.getUser()!;
-        this.value = this.valueSvg;
-        this.shop = 2
-    }
-  }
-
-  onMouseOver(){
-    this.value = this.user
-  }
-
-  onMouseOut(){
-    this.value = this.valueSvg;
+      }
+      this.carritoService.getNumberProducts().subscribe(
+        data => 
+        this.productsShop = data
+      )
   }
 
   isMenuCollapsed = true;
