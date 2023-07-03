@@ -1,34 +1,121 @@
 
 <nav class="navbar navbar-expand-lg bg-danger">
-  <div class="container-fluid">
-    <a class="navbar-brand text-white" href="#">ElectroShop</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <div class="nav-content-responsive m-auto mt-2 mb-2">
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn text-white border-0" type="submit"><i class="fa-solid fa-magnifying-glass fs-4"></i></button>
-        </form>
-      </div>
-      <ul class="navbar-nav mb-lg-0 justify-content-end">
-        <li class="nav-item">
-          <button class="btn">
-            <a class="nav-link active text-white" aria-current="page" href="#">Inicio</a>
-          </button>
-        </li>
-        <li class="nav-item">
-          <button class="btn">
-            <a class="nav-link active text-white" aria-current="page" href="#">Ingresar</a>
-          </button>
-        </li>
-        <li class="nav-item">
-          <button class="btn">
-            <a class="nav-link active text-white" aria-current="page" href="#">Nosotros</a>
-          </button>
-        </li>
-      </ul>
-    </div>
-  </div>
+	<div class="container-fluid">
+		<a class="navbar-brand text-white" (click)="go()">
+			<img src="../../../assets/7fcca8b7df394503874bcb32574286ec-removebg-preview.png" alt="" style="width: 70px;">
+		</a>
+		<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
+		<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+			<div class="nav-content-responsive m-auto mt-2 mb-2">
+				<form class="d-flex">
+					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+					<button class="btn text-white border-0" type="submit"><i class="fa-solid fa-magnifying-glass fs-4"></i></button>
+				</form>
+			</div>
+			<ul class="navbar-nav mb-lg-0 justify-content-end align-content-center">
+				<li class="nav-item">
+					<button class="btn">
+						<a class="nav-link active text-white" aria-current="page" (click)="go()" style="font-size: 1.2rem;">Inicio</a>
+					</button>
+				</li>
+				<li class="nav-item" *ngIf="!mostrar">
+					<button class="btn">
+						<a class="nav-link active text-white" aria-current="page" routerLink="../ingreso" style="font-size: 1.2rem;">Ingresar</a>
+					</button>
+				</li>
+				<li class="nav-item" *ngIf="mostrar">
+					<button class="btn">
+						<a class="nav-link active" aria-current="page">
+							<i class="pi pi-user cart-icon"></i>
+						</a>
+					</button>
+				</li>
+				<li class="nav-item" *ngIf="mostrar">
+					<button class="btn">
+						<a class="nav-link active" aria-current="page" routerLink="/home/carrito">
+							<i class="pi pi-shopping-cart cart-icon" pBadge value={{productsShop}}></i>
+						</a>
+					</button>
+				</li>
+				
+				<li class="nav-item">
+					<button class="btn">
+						<a class="nav-link active text-white" aria-current="page" routerLink="../nosotros" style="font-size: 1.2rem;">Nosotros</a>
+					</button>
+				</li>
+				<li class="nav-item" *ngIf="mostrar">
+					<button class="btn">
+						<a class="nav-link active" aria-current="page" (click)="logOut()">
+							<i class="pi pi-sign-out cart-icon"></i>
+						</a>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+	<div class="container-fluid">
+		<span class="navbar-brand">Categorias</span>
+		<button
+		class="navbar-toggler"
+		type="button"
+		aria-controls="navbarContent"
+		[attr.aria-expanded]="!collapsed"
+		aria-label="Toggle navigation"
+		(click)="collapsed = !collapsed">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	
+	<div class="navbar-collapse" [class.collapse]="collapsed" id="navbarContent">
+		<ul class="navbar-nav ms-auto">
+			<li class="nav-item" ngbDropdown>
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown1" role="button"> Hogar </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown1" class="dropdown-menu">
+					<a ngbDropdownItem (click)="sendTypeOfProduct('aspiradoras')">Aspiradoras</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('neveras')">Neveras</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('hornos & cocinas')">Hornos & cocina</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('termotanques')">Termotanques</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('calefactores')">Calefactores</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('aire acondicionado')">Aire acondicionado</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('microondas')">Microondas</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('ventiladores')">Ventiladores</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('planchas')">Planchas</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('licuadoras')">Licuadoras</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('pavas electricas & cafeteras')">Pavas electricas & cafeteras</a>
+					
+				</div>
+			</li>
+			
+			<li class="nav-item" ngbDropdown>
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown2" role="button"> Tecnologia </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown2" class="dropdown-menu dropdown-menu-end">
+					<a ngbDropdownItem (click)="sendTypeOfProduct('televisores')">Televisores</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('smartphones')">SmartPhones</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('equipos de musica')">Equipos de musica</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('computadoras')">Computadoras</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('consolas de videojuego')">Consolas de videojuego</a>
+				</div>
+			</li>
+			
+			<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown3" role="button"> Belleza y cuidado </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown3" class="dropdown-menu">
+					<a ngbDropdownItem (click)="sendTypeOfProduct('secadores')">Secadoras</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('depiladoras')">Depiladoras & afeitadoras</a>
+				</div>
+			</li>
+			
+			<li class="nav-item" ngbDropdown display="dynamic" placement="bottom-end">
+				<a class="nav-link" tabindex="0" ngbDropdownToggle id="navbarDropdown4" role="button"> Taller & Jardin </a>
+				<div ngbDropdownMenu aria-labelledby="navbarDropdown4" class="dropdown-menu">
+					<a ngbDropdownItem (click)="sendTypeOfProduct('cortacesped')">Cortacesped</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('motosierra')">Motosierra</a>
+					<a ngbDropdownItem (click)="sendTypeOfProduct('sopladora')">Sopladora</a>
+				</div>
+			</li>
+		</ul>
+	</div>
+</div>
 </nav>

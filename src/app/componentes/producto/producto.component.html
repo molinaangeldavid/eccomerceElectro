@@ -1,8 +1,10 @@
-<div class="card producto mx-auto" style="width: 14rem;">
-    <img src="https://garbarinoar.vtexassets.com/arquivos/ids/170943-300-300?v=1769187676&width=300&height=300&aspect=true" class="card-img-top" alt="...">
+<div class="card producto mx-auto" (click)="goTo()" style="width: 14rem;">
+    <img src={{product.imagen}} class="card-img-top" alt="...">
     <div class="card-body">
-        <p class="card-text">Pc All In One Aio Iqual Q213 Intel Core I3 4gb 1tb Windows</p>
-        <h4 class="text-danger">$ 100.319</h4>
+        <div class="description-text">
+            <p class="card-text">{{product.nombre}}</p>
+        </div>
+        <h4 class="text-danger">{{product.precio | currency}}</h4>
         <button class="btn btn-danger">VER PRODUCTO</button>
     </div>
 </div>

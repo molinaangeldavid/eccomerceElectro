@@ -11,7 +11,16 @@
     background-position: center;
     transform: scale(1.2);
     overflow: hidden;
+    color: #fff;
 }
+
+.cart-icon{
+    font-size: 1.5rem;
+    color: rgb(238, 223, 223);
+    position: relative;
+    top: 5px;
+}
+
 @media screen and (max-width:990px){
     .nav-content-responsive{
         flex-direction: column;

@@ -1,7 +1,6 @@
 footer {
     background-color: #f8f8f8;
     color: #555;
-    padding: 20px 0;
   }
   
   footer p {
@@ -11,3 +10,11 @@ footer {
   .style-hover:hover{
     color: royalblue;
   }
+
+  .center-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  

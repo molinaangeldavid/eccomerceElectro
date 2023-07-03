@@ -1,16 +1,17 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { faExclamation } from '@fortawesome/free-solid-svg-icons';
-import Swal from 'sweetalert2';
+import { MessageService } from 'primeng/api';
   
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.scss']
+  styleUrls: ['./registro.component.scss'],
+  providers: [MessageService]
 })
 export class RegistroComponent {
 
-  constructor(private router: Router){
+  constructor(private router: Router,private messageService: MessageService){
 
   }
 
@@ -30,31 +31,37 @@ export class RegistroComponent {
     passwordConfirm: undefined
   }
 
-  emailEqual: boolean = false;
-  passwordEqual: boolean = false;
+  // emailEqual: boolean = false;
+  // passwordEqual: boolean = false;
 
-  allFields: boolean = true;
+  allFields: boolean = false;
 
   valAllFields(): boolean{
-    if(this.registerAccount.username === undefined){
+    if(this.registerAccount.username === undefined || this.registerAccount.username.length < 6){
+      this.allFields = true;
       return false;
     }else{
-      if(this.registerAccount.email === undefined){
+      if(this.registerAccount.email === undefined || this.patternEmail.test(this.registerAccount.email)){
+        this.allFields = true;
         return false;
       }else{
-        if(this.confirmationFields.emailConfirm === undefined){
+        if(this.confirmationFields.emailConfirm === undefined || this.confirmationFields.emailConfirm != this.registerAccount.email){
+          this.allFields = true;
           return false;
         }else{
           if(this.registerAccount.fechaNacimiento === undefined){
+            this.allFields = true;
             return false;
           }else{
-            if(this.registerAccount.password === undefined){
+            if(this.registerAccount.password === undefined || this.registerAccount.password.length < 8){
+              this.allFields = true;
               return false;
             }else{
-              if(this.confirmationFields.passwordConfirm === undefined){
+              if(this.confirmationFields.passwordConfirm === undefined || this.confirmationFields.passwordConfirm != this.registerAccount.password){
+                this.allFields = true;
                 return false;
               }else{
-                this.allFields = false;
+                this.allFields = false
                 return true;
               }
             }
@@ -77,14 +84,9 @@ export class RegistroComponent {
     if(this.valAllFields()){
       if(!this.existAccount()){
         localStorage.setItem(this.registerAccount.username,JSON.stringify(this.registerAccount))
+        this.messageService.add({ severity: 'success', summary: 'Usuario registrado', detail: 'El usuario se ha registrado exitosamente.' });
         this.router.navigate(["/"])
       }else{
-        Swal.fire({
-          icon: 'error',
-          title: 'Usuario existente',
-          text: 'Este usuario existe en nuestra base de datos',
-          footer: '<a routerLink="ingreso">Ingresa con este usuario</a>'
-        })
       }
     }
   }
