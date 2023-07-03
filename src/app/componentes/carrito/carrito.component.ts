@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { CarritoService } from 'src/app/servicios/carrito.service';
 import { Router } from '@angular/router';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-carrito',
   templateUrl: './carrito.component.html',
-  styleUrls: ['./carrito.component.scss']
+  styleUrls: ['./carrito.component.scss'],
 })
+
 export class CarritoComponent {
 
   carritoProducts!: any[];
@@ -18,7 +20,8 @@ export class CarritoComponent {
   }
   
   constructor(private carritoService: CarritoService,
-    private router:Router
+    private router:Router,
+    private messageService: MessageService
     ){
   }
   
@@ -30,10 +33,15 @@ export class CarritoComponent {
     const index = this.carritoProducts.indexOf(product);
     this.carritoProducts.splice(index, 1);
     this.carritoService.deleteOneToCart()
+
   }
 
   goToShopping(){
     this.router.navigate(['/home/products'])
+  }
+
+  goToConfirm(){
+    this.router.navigate(["/home/compraFinal"])
   }
 
 }

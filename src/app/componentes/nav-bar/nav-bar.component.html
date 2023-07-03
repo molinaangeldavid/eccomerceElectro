@@ -25,7 +25,22 @@
 				</li>
 				<li class="nav-item" *ngIf="mostrar">
 					<p-sidebar [(visible)]="sidebarVisible" position="right">
-						<h3>Right Sidebar</h3>
+						<div>
+							<span class="fw-bold">Nombre de Usuario</span><br>
+							<span class="d-block bg-light my-1 text-bg-dark text-danger fw-normal">{{user.username}}</span>
+						</div>
+						<div class="input-group mb-3 mt-5">
+							<span class="fw-bold"></span>
+							<span class="input-group-text" id="basic-addon1" (click)="toggleShow()">
+								<i class="pi pi-eye" *ngIf="!showEmail"></i>
+								<i class="pi pi-eye-slash" *ngIf="showEmail"></i>
+							</span>
+							<input [type]="typeEmailUser" class="form-control" [(ngModel)]="user.email" aria-label="user.email" aria-describedby="basic-addon1">
+
+							
+
+						</div>
+						  
 					</p-sidebar>
 					
 					<button class="btn">
@@ -61,7 +76,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 	<div class="container-fluid">
-		<span class="navbar-brand">Categorias</span>
+		<span class="navbar-brand" id="categorias-subtitle">Categorias</span>
 		<button
 		class="navbar-toggler"
 		type="button"
