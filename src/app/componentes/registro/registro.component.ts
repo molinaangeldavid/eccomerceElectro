@@ -41,8 +41,7 @@ export class RegistroComponent {
       this.allFields = true;
       return false;
     }else{
-      if(this.registerAccount.email === undefined || this.patternEmail.test(this.registerAccount.email)){
-        this.allFields = true;
+      if(this.registerAccount.email === undefined || !this.patternEmail.test(this.registerAccount.email)){
         return false;
       }else{
         if(this.confirmationFields.emailConfirm === undefined || this.confirmationFields.emailConfirm != this.registerAccount.email){
@@ -83,10 +82,9 @@ export class RegistroComponent {
   signUp(){
     if(this.valAllFields()){
       if(!this.existAccount()){
-        localStorage.setItem(this.registerAccount.username,JSON.stringify(this.registerAccount))
-        this.messageService.add({ severity: 'success', summary: 'Usuario registrado', detail: 'El usuario se ha registrado exitosamente.' });
+        localStorage.setItem(this.registerAccount.username,JSON.stringify(this.registerAccount));
+        this.messageService.add({severity: 'sucess', summary: 'Registro exitoso', detail: 'Se ha registrado exitosamente'})
         this.router.navigate(["/"])
-      }else{
       }
     }
   }

@@ -8,23 +8,14 @@ export class UserDataService {
 
   constructor() { }
 
-  user: string | undefined;
-
-  showUserAccount: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false)
+  user: any;
 
   getUser(){
     return this.user
   }
 
-  setUser(value: string){
+  setUser(value: any){
     this.user = value
   }
 
-  getUserAccountDisplay(){
-    return this.showUserAccount
-  }
-
-  setUserDisplayAccount(){
-    this.showUserAccount.next(false)
-  }
 }

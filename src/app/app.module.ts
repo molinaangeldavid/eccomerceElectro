@@ -31,6 +31,10 @@ import { ToastModule } from 'primeng/toast';
 import { BadgeModule } from 'primeng/badge';
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MessageService } from 'primeng/api';
+import { CompraComponent } from './componentes/compra/compra.component';
+import { CantidadPipe } from './pipes/cantidad.pipe';
+import { ProfileUserComponent } from './componentes/profile-user/profile-user.component';
 
 
 @NgModule({
@@ -49,7 +53,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ProfileProductComponent,
     AsideFilterComponent,
     ContainerProductsComponent,
-    CarritoComponent
+    CarritoComponent,
+    CompraComponent,
+    CantidadPipe,
+    ProfileUserComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +75,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
 
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

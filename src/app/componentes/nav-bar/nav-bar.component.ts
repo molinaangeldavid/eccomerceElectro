@@ -12,15 +12,17 @@ import { CarritoService } from 'src/app/servicios/carrito.service';
 })
 export class NavBarComponent {
   
-  mostrar!: boolean;
-  user!: string;
+  showEmail: boolean = false;
+  showPassWord: boolean = false;
 
-  valueSvg: string = '<img src="../../../assets/person-circle.svg" alt="profile">'
-  value!: string;
+  mostrar!: boolean;
+  user: any;
 
   productsShop: any = 0;
   
   sidebarVisible: boolean = false;
+
+  typeEmailUser: any = 'password'
 
   constructor(
     private productsService: ProductsService, 
@@ -35,9 +37,6 @@ export class NavBarComponent {
         data => 
         this.productsShop = data
       )
-      this.userService.getUserAccountDisplay().subscribe(
-        data => this.mostrar = data)
-      
   }
 
   isMenuCollapsed = true;
@@ -56,11 +55,14 @@ export class NavBarComponent {
   }
 
   logOut(){
-    this.userService.setUser("")
+    this.userService.setUser(undefined)
     this.mostrar = false;
-    this.userService.setUserDisplayAccount();
   }
 
+  toggleShow(){
+    this.showEmail = !this.showEmail;
+    this.typeEmailUser = this.showEmail ? 'text' : 'password';
+  }
 
 
 }
