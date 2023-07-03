@@ -20,6 +20,8 @@ export class NavBarComponent {
 
   productsShop: any = 0;
   
+  sidebarVisible: boolean = false;
+
   constructor(
     private productsService: ProductsService, 
     private router: Router,
@@ -33,6 +35,9 @@ export class NavBarComponent {
         data => 
         this.productsShop = data
       )
+      this.userService.getUserAccountDisplay().subscribe(
+        data => this.mostrar = data)
+      
   }
 
   isMenuCollapsed = true;
@@ -53,8 +58,8 @@ export class NavBarComponent {
   logOut(){
     this.userService.setUser("")
     this.mostrar = false;
+    this.userService.setUserDisplayAccount();
   }
-
 
 
 
