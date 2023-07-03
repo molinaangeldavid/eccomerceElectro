@@ -24,8 +24,12 @@
 					</button>
 				</li>
 				<li class="nav-item" *ngIf="mostrar">
+					<p-sidebar [(visible)]="sidebarVisible" position="right">
+						<h3>Right Sidebar</h3>
+					</p-sidebar>
+					
 					<button class="btn">
-						<a class="nav-link active" aria-current="page">
+						<a class="nav-link active" aria-current="page" (click)="sidebarVisible = true">
 							<i class="pi pi-user cart-icon"></i>
 						</a>
 					</button>
