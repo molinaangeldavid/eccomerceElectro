@@ -33,7 +33,6 @@ import { SidebarModule } from 'primeng/sidebar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MessageService } from 'primeng/api';
 import { CompraComponent } from './componentes/compra/compra.component';
-import { CantidadPipe } from './pipes/cantidad.pipe';
 import { ProfileUserComponent } from './componentes/profile-user/profile-user.component';
 
 
@@ -55,7 +54,6 @@ import { ProfileUserComponent } from './componentes/profile-user/profile-user.co
     ContainerProductsComponent,
     CarritoComponent,
     CompraComponent,
-    CantidadPipe,
     ProfileUserComponent
   ],
   imports: [
