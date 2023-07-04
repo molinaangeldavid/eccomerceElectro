@@ -27,7 +27,7 @@
 					<p-sidebar [(visible)]="sidebarVisible" position="right">
 						<div>
 							<span class="fw-bold">Nombre de Usuario</span><br>
-							<span class="d-block bg-light my-1 text-bg-dark text-danger fw-normal">{{user.username}}</span>
+							<input [(ngModel)]="user.username" disabled class="form-control"/>
 						</div>
 						<div class="input-group mb-3 mt-5">
 							<span class="fw-bold"></span>
@@ -36,8 +36,6 @@
 								<i class="pi pi-eye-slash" *ngIf="showEmail"></i>
 							</span>
 							<input [type]="typeEmailUser" class="form-control" [(ngModel)]="user.email" aria-label="user.email" aria-describedby="basic-addon1">
-
-							
 
 						</div>
 						  

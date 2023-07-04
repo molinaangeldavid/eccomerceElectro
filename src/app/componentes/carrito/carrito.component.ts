@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CarritoService } from 'src/app/servicios/carrito.service';
 import { Router } from '@angular/router';
-import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-carrito',
@@ -13,6 +12,8 @@ export class CarritoComponent {
 
   carritoProducts!: any[];
 
+  totalProducts: number = 0;
+
   visible!: boolean;
 
   showDialog() {
@@ -21,19 +22,20 @@ export class CarritoComponent {
   
   constructor(private carritoService: CarritoService,
     private router:Router,
-    private messageService: MessageService
     ){
   }
   
   ngOnInit(){
     this.carritoProducts = this.carritoService.getProductsCarts()
+    for(let i of this.carritoProducts){
+      this.totalProducts += i.precio;
+    }
   }
 
   eliminarProducto(product: any) {
     const index = this.carritoProducts.indexOf(product);
     this.carritoProducts.splice(index, 1);
     this.carritoService.deleteOneToCart()
-
   }
 
   goToShopping(){

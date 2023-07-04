@@ -1,5 +1,5 @@
 
-<div class="w-75 m-auto py-4" >
+<div class="w-75 m-auto py-4 container-component" >
     <p-table [value]="carritoProducts" *ngIf="carritoProducts.length > 0">
         <ng-template pTemplate="header">
             <tr>
@@ -7,7 +7,6 @@
                 <th>Imagen</th>
                 <th>Nombre</th>
                 <th>Marca</th>
-                <th>Cantidad</th>
                 <th>Precio</th>
                 <th>Acciones</th>
             </tr>
@@ -20,11 +19,19 @@
                 </td> 
                 <td>{{ product.nombre }}</td>
                 <td>{{ product.marca }}</td>
-                <td>{{ carritoProducts | cantidad:product.codigo}}</td>
                 <td>{{ product.precio |currency }}</td>
                 <td>
                     <p-button type="button" styleClass="p-button-danger" (click)="eliminarProducto(product)" label="Eliminar"></p-button>
                 </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="footer" >
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{totalProducts | currency}}</td>
             </tr>
         </ng-template>
     </p-table>
