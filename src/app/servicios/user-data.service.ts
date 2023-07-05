@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -7,13 +8,14 @@ export class UserDataService {
 
   constructor() { }
 
-  user: string | undefined;
+  user: any;
 
   getUser(){
     return this.user
   }
 
-  setUser(value: string){
+  setUser(value: any){
     this.user = value
   }
+
 }

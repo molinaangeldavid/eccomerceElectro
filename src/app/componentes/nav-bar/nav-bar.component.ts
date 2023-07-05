@@ -12,14 +12,20 @@ import { CarritoService } from 'src/app/servicios/carrito.service';
 })
 export class NavBarComponent {
   
-  mostrar!: boolean;
-  user!: string;
+  showEmail: boolean = false;
+  showPassWord: boolean = false;
 
-  valueSvg: string = '<img src="../../../assets/person-circle.svg" alt="profile">'
-  value!: string;
+  mostrar!: boolean;
+  user: any;
 
   productsShop: any = 0;
   
+  sidebarVisible: boolean = false;
+
+  typeEmailUser: any = 'password'
+
+  stringSearch: any;
+
   constructor(
     private productsService: ProductsService, 
     private router: Router,
@@ -39,6 +45,11 @@ export class NavBarComponent {
 
   collapsed = true;
 
+  filterBySearch(){
+    let filter = hogar.filter(x => x.nombre.toLowerCase().includes(this.stringSearch.toLowerCase()))
+    this.productsService.setProducts(filter)
+  }
+
   sendTypeOfProduct(value: string){
     let filter = hogar.filter(x => x.categoria === value)
     this.router.navigate(['/home'])
@@ -51,11 +62,14 @@ export class NavBarComponent {
   }
 
   logOut(){
-    this.userService.setUser("")
+    this.userService.setUser(undefined)
     this.mostrar = false;
   }
 
-
+  toggleShow(){
+    this.showEmail = !this.showEmail;
+    this.typeEmailUser = this.showEmail ? 'text' : 'password';
+  }
 
 
 }

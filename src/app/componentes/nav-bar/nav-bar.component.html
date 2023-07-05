@@ -7,10 +7,8 @@
 		<button class="navbar-toggler" type="button" (click)="isMenuCollapsed = !isMenuCollapsed">&#9776;</button>
 		<div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
 			<div class="nav-content-responsive m-auto mt-2 mb-2">
-				<form class="d-flex">
-					<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-					<button class="btn text-white border-0" type="submit"><i class="fa-solid fa-magnifying-glass fs-4"></i></button>
-				</form>
+				<input class="form-control me-2" [(ngModel)]="stringSearch"  placeholder="Search" aria-label="Search" >
+				<button class="btn text-white border-0" type="button" (click)="filterBySearch()"><i class="fa-solid fa-magnifying-glass fs-4"></i></button>
 			</div>
 			<ul class="navbar-nav mb-lg-0 justify-content-end align-content-center">
 				<li class="nav-item">
@@ -24,8 +22,25 @@
 					</button>
 				</li>
 				<li class="nav-item" *ngIf="mostrar">
+					<p-sidebar [(visible)]="sidebarVisible" position="right">
+						<div>
+							<span class="fw-bold">Nombre de Usuario</span><br>
+							<input [(ngModel)]="user.username" disabled name="username" class="form-control"/>
+						</div>
+						<div class="input-group mb-3 mt-5">
+							<span class="fw-bold"></span>
+							<span class="input-group-text" id="basic-addon1" (click)="toggleShow()">
+								<i class="pi pi-eye" *ngIf="!showEmail"></i>
+								<i class="pi pi-eye-slash" *ngIf="showEmail"></i>
+							</span>
+							<input [type]="typeEmailUser" class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="user.email" aria-label="user.email" aria-describedby="basic-addon1">
+
+						</div>
+						  
+					</p-sidebar>
+					
 					<button class="btn">
-						<a class="nav-link active" aria-current="page">
+						<a class="nav-link active" aria-current="page" (click)="sidebarVisible = true">
 							<i class="pi pi-user cart-icon"></i>
 						</a>
 					</button>
@@ -57,7 +72,7 @@
 
 <nav class="navbar navbar-expand-md navbar-light bg-light">
 	<div class="container-fluid">
-		<span class="navbar-brand">Categorias</span>
+		<span class="navbar-brand" id="categorias-subtitle">Categorias</span>
 		<button
 		class="navbar-toggler"
 		type="button"

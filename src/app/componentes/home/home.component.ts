@@ -12,7 +12,6 @@ import { taller } from 'src/app/data/taller';
 })
 export class HomeComponent implements OnInit,OnChanges{
 
-  renderHeader!: boolean
 
   constructor(){}
 

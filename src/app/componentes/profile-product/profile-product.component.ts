@@ -4,6 +4,7 @@ import { ProductCardService } from 'src/app/servicios/product-card.service';
 import { Location } from '@angular/common';
 import { UserDataService } from 'src/app/servicios/user-data.service';
 import { CarritoService } from 'src/app/servicios/carrito.service';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-profile-product',
@@ -20,7 +21,8 @@ export class ProfileProductComponent {
     private _location: Location,
     private router:Router,
     private userDataService: UserDataService,
-    private carritoService: CarritoService){
+    private carritoService: CarritoService,
+    private messageService: MessageService){
     this.id = this.route.snapshot.paramMap.get('id');
   }
 
@@ -111,6 +113,8 @@ export class ProfileProductComponent {
   addCash(){
     if(this.userDataService.getUser() != undefined){
       this.carritoService.addNewProduct(this.product);
+      this.messageService.add({ severity: 'success', summary: 'Producto agregado', detail: 'El producto fue agregado exitosamente' })
+
     }else{
       this.router.navigate(['/ingreso'])
     }
