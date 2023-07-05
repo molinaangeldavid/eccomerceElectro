@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CarritoService } from 'src/app/servicios/carrito.service';
 import { Router } from '@angular/router';
+import { CompraDatosService } from 'src/app/servicios/compra-datos.service';
 
 @Component({
   selector: 'app-carrito',
@@ -22,6 +23,7 @@ export class CarritoComponent {
   
   constructor(private carritoService: CarritoService,
     private router:Router,
+    private compraDatosService: CompraDatosService
     ){
   }
   
@@ -44,6 +46,10 @@ export class CarritoComponent {
 
   goToConfirm(){
     this.router.navigate(["/home/compraFinal"])
+    this.compraDatosService.setDataShop({
+      cantidad: this.carritoProducts.length,
+      precioTotal: this.totalProducts
+    })
   }
 
 }
