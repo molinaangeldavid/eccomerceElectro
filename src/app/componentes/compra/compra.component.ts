@@ -2,7 +2,7 @@ import { Component,Renderer2, ElementRef,ViewChild, OnInit } from '@angular/core
 import { Router } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { CompraDatosService } from 'src/app/servicios/compra-datos.service';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 
 @Component({
@@ -57,6 +57,10 @@ export class CompraComponent implements OnInit{
     private messageService: MessageService,
     private router: Router,
     private compraDatosService: CompraDatosService){
+      this.name = "John Doe",
+      this.cardnumber = "6224 1233 3123 1333",
+      this.expirationdate = "07/23",
+      this.securitycode = 1231
   }
   
   name: any; 
@@ -67,7 +71,6 @@ export class CompraComponent implements OnInit{
   
   onSelect(event:any){
     this.shopInfo.ciudad = event.target.value
-    console.log(event.target.value)
   }
   
   flippedCardFunction(elementComponent:any){
@@ -93,29 +96,24 @@ export class CompraComponent implements OnInit{
   confirmarCompra(){
     
     if(this.shopInfo.nombreCompleto.length < 10 || this.shopInfo.direccion.length < 10 || this.shopInfo.telefono.length < 8){
-      this.messageService.add({severity: 'error', summary: "Datos incompletos", detail:"No has ingresado todos los datos correspondientes"})
+      this.messageService.add({key: 'c',severity: 'error', summary: "Datos incompletos", detail:"No has ingresado todos los datos correspondientes"})
     }else{
-      if(this.name.length < 10){
-        this.messageService.add({severity: 'error', summary: "Datos incompletos", detail:"No has ingresado tu nombre de tarjeta correspondiente"})
+      if(this.name.length < 10 || this.name == undefined){
+        this.messageService.add({key: 'c', severity: 'error', summary: "Datos incompletos", detail:"No has ingresado tu nombre de tarjeta correspondiente"})
       }else{
-        if(this.cardnumber.length != 19 || !(/^\d{4}\s\d{4}\s\d{4}\s\{4}$/.test(this.cardnumber))){
-          this.messageService.add({severity: 'error', summary: "Datos incompletos", detail:"No has ingresado el numero de tarjeta correspondiente"})
+        if(this.cardnumber.length != 19 || this.cardnumber == undefined || !(/^\d{4}\s\d{4}\s\d{4}\s\d{4}$/.test(this.cardnumber))){
+          this.messageService.add({key: 'c', severity: 'error', summary: "Datos incompletos", detail:"No has ingresado el numero de tarjeta correspondiente"})
         }else{
-          if(this.expirationdate.length != 5 || !(/^\d{2}\/\d{2}$/.test(this.expirationdate))){
-            this.messageService.add({severity: 'error', summary: "Datos incompletos", detail:"No has ingresado una fecha de expiracion de la tarjeta valida"})
+          if(this.expirationdate.length != 5 || this.expirationdate == undefined || !(/^\d{2}\/\d{2}$/.test(this.expirationdate))){
+            this.messageService.add({key: 'c', severity: 'error', summary: "Datos incompletos", detail:"No has ingresado una fecha de expiracion de la tarjeta valida"})
           }else{
-            if(this.securitycode.length != 4 || (/^w{4}$/.test(this.securitycode))){
-              this.messageService.add({severity: 'error', summary: "Datos incompletos", detail:"No has ingresado el codigo de tarjeta correspondiente"})
+            if(this.securitycode.length != 4 || this.securitycode == undefined || (/^w{4}$/.test(this.securitycode))){
+              this.messageService.add({key: 'c', severity: 'error', summary: "Datos incompletos", detail:"No has ingresado el codigo de tarjeta correspondiente"})
             }else{
-              this.messageService.add({severity: 'sucess', summary: "Compra exitosa", detail:"Has realizado la compra exitosamente!"})
               setTimeout(() => {
                 this.router.navigate(["/home/products"])
               }, 3000);
-              Swal.fire(
-                'Compra exitosa!',
-                'Has realizado tu compra con exito!',
-                'success'
-              )
+              this.messageService.add({key: 'c', severity: 'success', summary: "Compra exitosa", detail:"Has realizado la compra exitosamente!"})
             } 
           }
         }
