@@ -71,7 +71,6 @@ import { ProfileUserComponent } from './componentes/profile-user/profile-user.co
     BadgeModule,
     SidebarModule,
     BrowserAnimationsModule
-
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]

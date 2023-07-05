@@ -7,32 +7,33 @@
     <div class="row my-4">
         <div class="col-6">
             <span>Total de productos en carrito: </span>
-            <span></span>
+            <span>{{datosFromCarrito.cantidad}}</span>
         </div>
         <div class="col-6">
             <span>Total en pesos del carrito: </span>
-            <span></span>
+            <span>{{datosFromCarrito.precioTotal | currency}}</span>
         </div>
     </div>
 
     <span class="mb-2"><strong>* Por favor completar todos los campos para realizar el pago</strong></span>
 
     <div class="input-group mb-3">
-        <label for="nombre" class="form-label">Nombre completo</label>
+        <label for="nombre" class="form-label">Nombre completo *</label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" aria-label="Nombre completo" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" [(ngModel)]="shopInfo.nombreCompleto" aria-label="Nombre completo" aria-describedby="basic-addon1">
         </div>
-        <label for="direccion" class="form-label">Direccion</label>
+        <label for="direccion" class="form-label">Direccion *</label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" aria-label="direccion" aria-describedby="basic-addon2">
+            <input type="text" class="form-control" [(ngModel)]="shopInfo.direccion" aria-label="direccion" aria-describedby="basic-addon2">
         </div>
-        <label for="telefono" class="form-label">Telefono</label>
+        <label for="telefono" class="form-label">Telefono *</label>
         <div class="input-group mb-3">
-            <input type="text" class="form-control" aria-label="telefono" aria-describedby="basic-addon3">
+            <input type="text" class="form-control" [(ngModel)]="shopInfo.telefono" aria-label="telefono" aria-describedby="basic-addon3">
         </div>
-        <div class="dropdown">
-            <select name="" id="" >
-                <option value="{{c}}" *ngFor="let c of cities">{{c}}</option>
+        <label for="ciudad" class="form-label">Ciudad*</label>
+        <div class="dropdown input-group">
+            <select name="" id="" (change)="onSelect($event)">
+                <option value={{c}} *ngFor="let c of cities">{{c}}</option>
             </select>
           </div>
     </div>
@@ -40,7 +41,6 @@
     <div>
         <label for="comentario" class="form-label">Deja comentarios si deseas agregar mas detalles</label>
         <div class="input-group">
-            <span class="input-group-text"></span>
             <textarea class="form-control" aria-label="With textarea"></textarea>
         </div>
     </div>
@@ -50,8 +50,8 @@
             <div class="creditcard" #creditcard (click)="flipCard()">
                 <div class="front">
                     <div id="ccsingle"></div>
-                    <svg version="1.1" id="cardfront" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                    <svg version="1.1" id="cardfront" 
+                        x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" >
                         <g id="Front">
                             <g id="CardBackground">
                                 <g id="Page-1_1_">
@@ -112,8 +112,8 @@
                     </svg>
                 </div>
                 <div class="back">
-                    <svg version="1.1" id="cardback" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;" xml:space="preserve">
+                    <svg version="1.1" id="cardback"
+                        x="0px" y="0px" viewBox="0 0 750 471" style="enable-background:new 0 0 750 471;">
                         <g id="Front">
                             <line class="st0" x1="35.3" y1="10.4" x2="36.7" y2="11" />
                         </g>
@@ -146,28 +146,27 @@
         </div>
         <div class="form-container">
             <div class="field-container">
-                <label for="name" >Name</label>
+                <label for="name" >Name*</label>
                 <input [(ngModel)]="name" maxlength="20" type="text">
             </div>
             <div class="field-container">
-                <label for="cardnumber" >Card Number</label>
-                <input [(ngModel)]="cardnumber" type="text" pattern="[0-9]*" inputmode="numeric">
-                <svg id="ccicon" class="ccicon" width="750" height="471" viewBox="0 0 750 471" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:xlink="http://www.w3.org/1999/xlink">
-                </svg>
+                <label for="cardnumber" >Card Number (formato: xxxx xxxx xxxx xxxx)*</label>
+                <input [(ngModel)]="cardnumber" maxlength="19" type="text" pattern="[0-9]*" inputmode="numeric">
             </div>
             <div class="field-container">
-                <label for="expirationdate" >Expiration (mm/yy)</label>
-                <input [(ngModel)]="expirationdate" type="text" pattern="[0-9]*" inputmode="numeric">
+                <label for="expirationdate" >Expiration (formato: mm/yy)*</label>
+                <input [(ngModel)]="expirationdate" maxlength="5" type="text" pattern="[0-9]*" inputmode="numeric">
             </div>
             <div class="field-container">
-                <label for="securitycode">Security Code</label>
-                <input [(ngModel)]="securitycode" type="text" pattern="[0-9]*" inputmode="numeric">
+                <label for="securitycode">Security Code (formato: xxxx)*</label>
+                <input [(ngModel)]="securitycode" maxlength="4" type="text" pattern="[0-9]*" inputmode="numeric">
             </div>
         </div>
     </div>
 
     <div class="m-auto">
-        <button type="button" class="btn btn-outline-primary">Confirmar compra</button>
+
+        <p-toast></p-toast>
+        <button type="button" class="btn btn-outline-primary" (click)="confirmarCompra()">Confirmar compra</button>
     </div>
 </div>

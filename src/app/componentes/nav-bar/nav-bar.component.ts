@@ -24,6 +24,8 @@ export class NavBarComponent {
 
   typeEmailUser: any = 'password'
 
+  stringSearch: any;
+
   constructor(
     private productsService: ProductsService, 
     private router: Router,
@@ -42,6 +44,11 @@ export class NavBarComponent {
   isMenuCollapsed = true;
 
   collapsed = true;
+
+  filterBySearch(){
+    let filter = hogar.filter(x => x.nombre.toLowerCase().includes(this.stringSearch.toLowerCase()))
+    this.productsService.setProducts(filter)
+  }
 
   sendTypeOfProduct(value: string){
     let filter = hogar.filter(x => x.categoria === value)
