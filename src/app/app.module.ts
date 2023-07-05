@@ -70,7 +70,7 @@ import { ProfileUserComponent } from './componentes/profile-user/profile-user.co
     ToastModule,
     BadgeModule,
     SidebarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
