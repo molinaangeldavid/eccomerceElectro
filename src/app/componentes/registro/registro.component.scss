@@ -5,6 +5,13 @@
   height: auto;
 }
 
+.login-form-header .img-logIn{
+  text-align: center;
+  padding: 5px;
+  border-radius: 10px;
+  background-color:rgba(82, 168, 121, 0.852);
+}
+
 .login-form-box {
   background-color: #fff;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -61,6 +68,8 @@
 //   color: #820000;
 //   padding: .5rem;
 // }
+
+
 
 .button-submit {
   margin-top: 5px;
